@@ -1,18 +1,7 @@
 # Wedding Invitation
 
-![Venue building](public/figma/venue-building.png)
+![Venue Building](venue-building.png)
 
-Маленькая одностраничная Nuxt 4 презентация‑приглашение на свадьбу с декоративными слайдами, карточками события и информацией о месте проведения.
+A small wedding invitation landing page built with Nuxt.js and custom CSS.
 
-## Структура проекта
-
-- `app/` — страницы и компоненты Vue
-- `app/assets/css/` — стили приглашения
-- `public/figma/` — графика и иллюстрации
-
-## Быстрый запуск
-
-```bash
-bun install
-bun run dev
-```
+This project renders a stylized invitation layout for mobile and desktop, with custom imagery and typography.
