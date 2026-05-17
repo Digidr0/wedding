@@ -1,7 +1,7 @@
 # Wedding Invitation
 
-![Venue Building](venue-building.png)
+This repository is intended for the wedding invitation project.
 
-A small wedding invitation landing page built with Nuxt.js and custom CSS.
+The demo GitHub Pages site has been removed and the repository cleaned of temporary static files.
 
-This project renders a stylized invitation layout for mobile and desktop, with custom imagery and typography.
+Add your actual project source files to this repository to publish your real invitation site.
