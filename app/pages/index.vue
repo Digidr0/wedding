@@ -1,10 +1,10 @@
 <template>
 	<div class="invitation-outer">
 		<div class="invitation-scaler">
-			<main class="invitation-page" aria-label="Приглашение на свадьбу Alexander и Milaslava">
+			<main ref="pageRoot" class="invitation-page" aria-label="Приглашение на свадьбу Alexander и Milaslava">
 				<div class="invitation-page__inner">
 					<!-- Slide 1: Hero -->
-					<section class="slide-hero" aria-labelledby="hero-title">
+					<section class="slide-hero slide-animate" aria-labelledby="hero-title">
 						<div class="slide-hero__deco slide-hero__deco--lace-left" aria-hidden="true">
 							<img src="/figma/hero-lace-left.png" alt="" />
 						</div>
@@ -28,7 +28,7 @@
 					</section>
 
 					<!-- Slide 2: Invitation -->
-					<section class="slide-invite" aria-label="Приглашение">
+					<section class="slide-invite slide-animate" aria-label="Приглашение">
 						<div class="slide-invite__lace" aria-hidden="true">
 							<img src="/figma/lace-vertical.png" alt="" />
 						</div>
@@ -48,7 +48,7 @@
 					</section>
 
 					<!-- Slide 3: Venue -->
-					<section class="slide-venue" aria-label="Место проведения">
+					<section class="slide-venue slide-animate" aria-label="Место проведения">
 						<div class="slide-venue__photos" aria-hidden="true">
 							<div class="slide-venue__photo-left">
 								<img src="/figma/venue-photo-left.png" alt="" />
@@ -69,7 +69,7 @@
 					</section>
 
 					<!-- Slide 4: Address -->
-					<section class="slide-address" aria-label="Адрес и карта">
+					<section class="slide-address slide-animate" aria-label="Адрес и карта">
 						<div class="slide-address__paper" aria-hidden="true">
 							<img src="/figma/address-paper.png" alt="" />
 						</div>
@@ -102,7 +102,7 @@
 							</div>
 							<a
 								class="btn-wedding slide-address__map-btn"
-								href="https://yandex.ru/maps/?pt=40.2893761,47.8431907&z=16&l=map"
+								href="https://2gis.ru/search/47.8431907%2040.2893761/firm/70000001100675258/40.288954%2C47.84301?m=40.289116%2C47.843086%2F19.99"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -112,7 +112,7 @@
 					</section>
 
 					<!-- Slide 5: Details -->
-					<section class="slide-details" aria-labelledby="details-title">
+					<section class="slide-details slide-animate" aria-labelledby="details-title">
 						<div class="slide-details__collage" aria-hidden="true">
 							<div class="slide-details__img slide-details__img--11">
 								<img src="/figma/image-11.png" alt="" />
@@ -164,7 +164,7 @@
 					</section>
 
 					<!-- Slide 6: Dress code -->
-					<section class="slide-dresscode" aria-labelledby="dresscode-title">
+					<section class="slide-dresscode slide-animate" aria-labelledby="dresscode-title">
 						<div>
 							<p class="slide-dresscode__items-text font-script">
 								Для поддерживания стилистики гостям будут<br />
@@ -211,7 +211,7 @@
 					</section>
 
 					<!-- Schedule header -->
-					<section class="slide-schedule-header" aria-label="Свадебное расписание">
+					<section class="slide-schedule-header slide-animate" aria-label="Свадебное расписание">
 						<div class="slide-schedule-header__bg" aria-hidden="true">
 							<img
 								src="/figma/Sheludle-title-bg.png"
@@ -224,7 +224,7 @@
 					</section>
 
 					<!-- Schedule -->
-					<section class="slide-schedule" aria-label="Расписание">
+					<section class="slide-schedule slide-animate" aria-label="Расписание">
 						<div class="slide-schedule__lace-left" aria-hidden="true">
 							<img src="/figma/schedule-photos-small.png" alt="" />
 						</div>
@@ -277,7 +277,7 @@
 					</section>
 
 					<!-- Footer -->
-					<section class="slide-footer" aria-label="Подтверждение присутствия">
+					<section class="slide-footer slide-animate" aria-label="Подтверждение присутствия">
 						<div class="slide-footer__lace-left" aria-hidden="true">
 							<img src="/figma/lace-footer.png" alt="" />
 						</div>
@@ -289,7 +289,14 @@
 							<p class="slide-footer__rsvp-text font-script">
 								Пожалуйста подтвердите свое присутствие нажав на кнопку ниже:
 							</p>
-							<button type="button" class="btn-wedding slide-footer__btn font-serif">Я буду!</button>
+							<a
+								href="https://forms.yandex.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="btn-wedding slide-footer__btn font-serif"
+							>
+								Я буду!
+							</a>
 							<p class="slide-footer__closing font-script">
 								<span class="slide-footer__closing-cap-lg">Л</span><span>юбим Вас и </span><span class="slide-footer__closing-cap">Ж</span><span>дем!</span>
 							</p>
@@ -302,7 +309,33 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
+
+const pageRoot = ref<HTMLElement | null>(null)
+
 useHead({
 	title: 'Alexander & Milaslava — Wedding',
+})
+
+onMounted(() => {
+	if (!pageRoot.value) return
+
+	const sections = Array.from(pageRoot.value.querySelectorAll('section')) as HTMLElement[]
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('is-visible')
+					observer.unobserve(entry.target)
+				}
+			})
+		},
+		{
+			threshold: 0.2,
+			rootMargin: '0px 0px -10% 0px',
+		}
+	)
+
+	sections.forEach((section) => observer.observe(section))
 })
 </script>
