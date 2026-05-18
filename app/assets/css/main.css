@@ -1,0 +1,38 @@
+:root {
+	--wedding-ink: #524335;
+	--wedding-ink-accent: #654c2a;
+	--wedding-btn: #c4bbb2;
+	--wedding-white: #ffffff;
+	--font-script: 'Great Vibes', 'Brush Script MT', cursive;
+	--font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+	--page-width: 1024.5px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#__nuxt {
+	margin: 0;
+	min-height: 100%;
+}
+
+body {
+	background: #ffffff;
+	font-family: var(--font-serif);
+	-webkit-font-smoothing: antialiased;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+button {
+	font-family: inherit;
+	cursor: pointer;
+}
