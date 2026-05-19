@@ -310,11 +310,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Splitting from 'splitting'
-
-gsap.registerPlugin(ScrollTrigger)
+// Load heavy browser-only libs dynamically inside onMounted to avoid SSR errors
 
 const pageRoot = ref<HTMLElement | null>(null)
 
@@ -322,15 +318,29 @@ useHead({
 	title: 'Alexander & Milaslava — Wedding',
 })
 
-onMounted(() => {
+onMounted(async () => {
 	if (!pageRoot.value) return
 
-	// run splitting on marked elements
+	// Dynamically import GSAP and Splitting on client only to avoid SSR "document is not defined"
+	let gsap: any = null
 	try {
+		const gsapMod = await import('gsap')
+		const scrollMod = await import('gsap/ScrollTrigger')
+		gsap = gsapMod.default || gsapMod
+		const ScrollTrigger = scrollMod.ScrollTrigger || scrollMod.default || scrollMod
+		gsap.registerPlugin(ScrollTrigger)
+	} catch (e) {
+		// fail gracefully if GSAP can't load
+		// console.warn('GSAP load failed', e)
+	}
+
+	// run splitting on marked elements (client-only)
+	try {
+		const splitMod = await import('splitting')
+		const Splitting = splitMod.default || splitMod
 		Splitting({ target: pageRoot.value.querySelectorAll('[data-split="chars"]') })
 	} catch (e) {
-		// fallback: ignore if splitting fails
-		// console.warn('Splitting failed', e)
+		// ignore if splitting fails in this environment
 	}
 
 	const sections = Array.from(pageRoot.value.querySelectorAll('section')) as HTMLElement[]
@@ -350,7 +360,7 @@ onMounted(() => {
 
 					// character animation
 					const chars = el.querySelectorAll('.char')
-					if (chars.length) {
+					if (chars.length && gsap) {
 						gsap.fromTo(
 							chars,
 							{ y: 12, opacity: 0, rotationX: -6 },
@@ -360,7 +370,7 @@ onMounted(() => {
 
 					// photos animation (light drop + rotation)
 					const imgs = Array.from(el.querySelectorAll('img')) as HTMLElement[]
-					if (imgs.length) {
+					if (imgs.length && gsap) {
 						gsap.fromTo(
 							imgs,
 							{ y: -30, rotation: 8, opacity: 0 },
