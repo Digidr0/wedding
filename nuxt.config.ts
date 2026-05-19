@@ -4,7 +4,7 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 	css: ['~/assets/css/main.css', '~/assets/css/invitation.css'],
 	app: {
-		baseURL: process.env.BASE_URL || '/wedding/',
+		baseURL: '/wedding/',
 		head: {
 			title: 'Alexander & Milaslava — Wedding',
 			link: [
