@@ -22,13 +22,20 @@
 							The wedding of<br />
 							Alexander &amp;Milaslava
 						</h1>
-						<div class="slide-hero__letter" aria-hidden="true">
-							<img src="/figma/letter.png" alt="" />
-						</div>
-					</section>
+				<div class="slide-hero__letter" aria-hidden="true">
+					<span class="slide-hero__letter-text font-script">Приглашение</span>
+					<video
+						src="/animated/output.webm"
+						muted
+						playsinline
+						preload="metadata"
+						aria-hidden="true"
+					></video>
+				</div>
+			</section>
 
-					<!-- Slide 2: Invitation -->
-					<section class="slide-invite slide-animate" aria-label="Приглашение">
+			<!-- Slide 2: Invitation -->
+			<section class="slide-invite slide-animate" aria-label="Приглашение">
 						<div class="slide-invite__lace" aria-hidden="true">
 							<img src="/figma/lace-vertical.png" alt="" />
 						</div>
@@ -310,6 +317,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import { useHead } from '#imports'
 // Load heavy browser-only libs dynamically inside onMounted to avoid SSR errors
 
 const pageRoot = ref<HTMLElement | null>(null)
@@ -343,6 +351,45 @@ onMounted(async () => {
 		// ignore if splitting fails in this environment
 	}
 
+	const videos = Array.from(pageRoot.value.querySelectorAll('video')) as HTMLVideoElement[]
+	videos.forEach((video) => {
+		video.autoplay = false
+		video.muted = true
+		video.preload = 'metadata'
+		video.pause()
+		video.currentTime = 0
+		video.style.opacity = '1'
+		video.style.transition = 'opacity 0.3s ease'
+
+		const showFirstFrame = () => {
+			video.currentTime = 0
+			video.pause()
+			video.style.opacity = '1'
+		}
+
+		if (video.readyState >= 1) {
+			showFirstFrame()
+		} else {
+			video.addEventListener('loadeddata', showFirstFrame, { once: true })
+		}
+
+		video.addEventListener(
+			'ended',
+			() => {
+				video.pause()
+				video.style.opacity = '0'
+				video.style.display = 'none'
+			},
+			{ once: true }
+		)
+
+		setTimeout(() => {
+			video.play().catch(() => {
+				// ignore autoplay block or playback failure
+			})
+		}, 1000)
+	})
+
 	const sections = Array.from(pageRoot.value.querySelectorAll('section')) as HTMLElement[]
 
 	const observer = new IntersectionObserver(
@@ -358,29 +405,50 @@ onMounted(async () => {
 				.forEach((entry) => {
 					const el = entry.target as HTMLElement
 
-					// character animation
-					const chars = el.querySelectorAll('.char')
-					if (chars.length && gsap) {
-						gsap.fromTo(
-							chars,
-							{ y: 12, opacity: 0, rotationX: -6 },
-							{ y: 0, opacity: 1, rotationX: 0, duration: 0.32, stagger: 0.02, ease: 'power2.out' }
-						)
+					// per-section delay map (seconds)
+					const delayMap: Record<string, number> = {
+						'slide-invite': 3,
+						'slide-venue': 4,
+						'slide-address': 5,
 					}
 
-					// photos animation (light drop + rotation)
-					const imgs = Array.from(el.querySelectorAll('img')) as HTMLElement[]
-					if (imgs.length && gsap) {
-						gsap.fromTo(
-							imgs,
-							{ y: -30, rotation: 8, opacity: 0 },
-							{ y: 0, rotation: 0, opacity: 1, duration: 0.6, stagger: 0.06, ease: 'power3.out' }
-						)
+					// determine delay based on section class
+					let delay = 0
+					for (const cls in delayMap) {
+						if (el.classList.contains(cls)) {
+							delay = delayMap[cls]
+							break
+						}
 					}
 
-					// fallback simple reveal class for non-splitted content
-					el.classList.add('is-visible')
+					// stop observing to avoid re-triggers
 					observer.unobserve(el)
+
+					// schedule animations after delay (ms)
+					setTimeout(() => {
+						// character animation
+						const chars = el.querySelectorAll('.char')
+						if (chars.length && gsap) {
+							gsap.fromTo(
+								chars,
+								{ y: 12, opacity: 0, rotationX: -6 },
+								{ y: 0, opacity: 1, rotationX: 0, duration: 0.32, stagger: 0.02, ease: 'power2.out' }
+							)
+						}
+
+						// photos animation (light drop + rotation)
+						const imgs = Array.from(el.querySelectorAll('img')) as HTMLElement[]
+						if (imgs.length && gsap) {
+							gsap.fromTo(
+								imgs,
+								{ y: -30, rotation: 8, opacity: 0 },
+								{ y: 0, rotation: 0, opacity: 1, duration: 0.6, stagger: 0.06, ease: 'power3.out' }
+							)
+						}
+
+						// fallback simple reveal class for non-splitted content
+						el.classList.add('is-visible')
+					}, delay * 1000)
 				})
 		},
 		{

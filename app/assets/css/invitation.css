@@ -55,7 +55,7 @@
 }
 
 .slide-hero__title {
-	margin: 0;
+	margin: 20px;
 	text-align: center;
 	font-family: var(--font-script);
 	font-size: 80px;
@@ -73,13 +73,29 @@
 	height: 291px;
 }
 
-.slide-hero__letter img {
+.slide-hero__letter img,
+.slide-hero__letter video {
 	position: absolute;
 	width: 105.66%;
 	height: 106.9%;
 	left: -0.04%;
 	top: -6.88%;
 	object-fit: cover;
+	z-index: 2;
+}
+
+.slide-hero__letter-text {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	font-size: 90px;
+	background-color: #e0d6cc75;
+	border-radius: 15px;
+	line-height: 1;
+	z-index: 1;
+	pointer-events: none;
+	color: var(--wedding-ink-accent);
 }
 
 .slide-hero__deco {
