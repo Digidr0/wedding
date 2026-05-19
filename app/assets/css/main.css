@@ -32,6 +32,12 @@ img {
 	max-width: 100%;
 }
 
+.char {
+	display: inline-block;
+	line-height: 1em;
+	transform-origin: 50% 50%;
+}
+
 .slide-animate {
 	opacity: 0;
 	transform: translateY(20px);

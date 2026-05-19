@@ -18,7 +18,7 @@
 							<img src="/figma/hero-flower-right.png" alt="" />
 						</div>
 
-						<h1 id="hero-title" class="slide-hero__title">
+						<h1 id="hero-title" class="slide-hero__title" data-split="chars">
 							The wedding of<br />
 							Alexander &amp;Milaslava
 						</h1>
@@ -37,12 +37,12 @@
 						</div>
 
 						<div class="slide-invite__text">
-							<p class="slide-invite__greeting font-script">
+							<p class="slide-invite__greeting font-script" data-split="chars">
 								Дорогие гости!<br />
 								Мы приглашаем вас<br />
 								на нашу Свадьбу!
 							</p>
-							<p class="slide-invite__date font-script">29.08.2026</p>
+							<p class="slide-invite__date font-script" data-split="chars">29.08.2026</p>
 							<p class="slide-invite__venue-label font-serif">Место проведения:</p>
 						</div>
 					</section>
@@ -61,8 +61,8 @@
 							</div>
 						</div>
 						<header class="slide-venue__title">
-							<p class="slide-venue__subtitle font-script">Загородный клуб</p>
-							<p class="slide-venue__name font-script">
+							<p class="slide-venue__subtitle font-script" data-split="chars">Загородный клуб</p>
+							<p class="slide-venue__name font-script" data-split="chars">
 								<span class="slide-venue__name-first">H</span>unterburg
 							</p>
 						</header>
@@ -153,7 +153,7 @@
 						</div>
 
 						<div class="slide-details__title-wrap">
-							<h2 id="details-title" class="slide-details__title font-serif">Детали</h2>
+							<h2 id="details-title" class="slide-details__title font-serif" data-split="chars">Детали</h2>
 							<p class="slide-details__desc font-script">
 								Наша свадьба будет<br />
 								проходить в испанском стиле<br />
@@ -310,6 +310,11 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Splitting from 'splitting'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const pageRoot = ref<HTMLElement | null>(null)
 
@@ -320,18 +325,56 @@ useHead({
 onMounted(() => {
 	if (!pageRoot.value) return
 
+	// run splitting on marked elements
+	try {
+		Splitting({ target: pageRoot.value.querySelectorAll('[data-split="chars"]') })
+	} catch (e) {
+		// fallback: ignore if splitting fails
+		// console.warn('Splitting failed', e)
+	}
+
 	const sections = Array.from(pageRoot.value.querySelectorAll('section')) as HTMLElement[]
+
 	const observer = new IntersectionObserver(
 		(entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('is-visible')
-					observer.unobserve(entry.target)
-				}
-			})
+			// animate in the order entries become visible
+			entries
+				.filter((e) => e.isIntersecting)
+				.sort((a, b) => {
+					const aRect = a.target.getBoundingClientRect()
+					const bRect = b.target.getBoundingClientRect()
+					return aRect.top - bRect.top
+				})
+				.forEach((entry) => {
+					const el = entry.target as HTMLElement
+
+					// character animation
+					const chars = el.querySelectorAll('.char')
+					if (chars.length) {
+						gsap.fromTo(
+							chars,
+							{ y: 12, opacity: 0, rotationX: -6 },
+							{ y: 0, opacity: 1, rotationX: 0, duration: 0.32, stagger: 0.02, ease: 'power2.out' }
+						)
+					}
+
+					// photos animation (light drop + rotation)
+					const imgs = Array.from(el.querySelectorAll('img')) as HTMLElement[]
+					if (imgs.length) {
+						gsap.fromTo(
+							imgs,
+							{ y: -30, rotation: 8, opacity: 0 },
+							{ y: 0, rotation: 0, opacity: 1, duration: 0.6, stagger: 0.06, ease: 'power3.out' }
+						)
+					}
+
+					// fallback simple reveal class for non-splitted content
+					el.classList.add('is-visible')
+					observer.unobserve(el)
+				})
 		},
 		{
-			threshold: 0.2,
+			threshold: 0.15,
 			rootMargin: '0px 0px -10% 0px',
 		}
 	)
