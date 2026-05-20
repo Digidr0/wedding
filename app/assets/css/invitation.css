@@ -1009,6 +1009,190 @@
 }
 
 
+/* —— RSVP Form —— */
+.rsvp-form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+	width: 562px;
+}
+
+.rsvp-form__title {
+	margin: 80px 0 0;
+	font-family: var(--font-script);
+	font-size: 52px;
+	line-height: 1.2;
+	color: var(--wedding-ink-accent);
+}
+
+.rsvp-form__row {
+	display: flex;
+	gap: 24px;
+	width: 100%;
+}
+
+.rsvp-form__field {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.rsvp-form__label {
+	margin: 0;
+	font-size: 22px;
+	color: var(--wedding-ink-accent);
+	letter-spacing: 0.03em;
+}
+
+.rsvp-form__input {
+	font-family: var(--font-serif);
+	font-size: 26px;
+	color: var(--wedding-ink);
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid var(--wedding-btn);
+	padding: 6px 0 4px;
+	outline: none;
+	transition: border-color 0.3s ease;
+	width: 100%;
+}
+
+.rsvp-form__input:hover {
+	border-bottom-color: var(--wedding-ink);
+}
+
+.rsvp-form__input:focus {
+	border-bottom-color: var(--wedding-ink-accent);
+}
+
+.rsvp-form__input[type='number'] {
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+
+.rsvp-form__input[type='number']::-webkit-outer-spin-button,
+.rsvp-form__input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Custom checkbox */
+.rsvp-form__checkbox {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	cursor: pointer;
+	position: relative;
+	padding-top: 10px;
+	width: 100%;
+	user-select: none;
+}
+
+.rsvp-form__checkbox input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.rsvp-form__checkmark {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	min-width: 24px;
+	border: 1.5px solid var(--wedding-btn);
+	border-radius: 3px;
+	flex-shrink: 0;
+	transition: all 0.25s ease;
+	background: transparent;
+}
+
+.rsvp-form__checkbox:hover input ~ .rsvp-form__checkmark {
+	border-color: var(--wedding-ink);
+}
+
+.rsvp-form__checkbox input:checked ~ .rsvp-form__checkmark {
+	background: var(--wedding-ink-accent);
+	border-color: var(--wedding-ink-accent);
+}
+
+.rsvp-form__checkmark::after {
+	content: '';
+	display: none;
+	width: 6px;
+	height: 11px;
+	border: solid var(--wedding-white);
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	margin-top: -2px;
+}
+
+.rsvp-form__checkbox input:checked ~ .rsvp-form__checkmark::after {
+	display: block;
+}
+
+.rsvp-form__checkbox-label {
+	font-size: 20px;
+	color: var(--wedding-ink-accent);
+	line-height: 1.35;
+}
+
+/* Submit button */
+.rsvp-form__btn {
+	width: 300px;
+	height: 70px;
+	font-size: 40px;
+	border: none;
+	font-weight: 800;
+	margin-top: 6px;
+	transition: opacity 0.3s ease;
+}
+
+.rsvp-form__btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.rsvp-form__btn:not(:disabled):hover {
+	background: var(--wedding-ink-accent);
+	color: var(--wedding-white);
+	border-color: var(--wedding-ink-accent);
+}
+
+/* Success message */
+.rsvp-form__success {
+	display: none;
+	font-size: 42px;
+	color: var(--wedding-ink-accent);
+	text-align: center;
+	width: 100%;
+	padding: 16px 0;
+}
+
+[data-fs-success].fs-success-show {
+	display: block;
+}
+
+/* Form-level error */
+[data-fs-error] {
+	font-family: var(--font-serif);
+	font-size: 16px;
+	color: #a94442;
+	width: 100%;
+}
+
+[data-fs-error]:not(:empty) {
+	background: #f2dede;
+	border: 1px solid #ebccd1;
+	border-radius: 6px;
+	padding: 8px 12px;
+}
+
 @media (max-width: 1100px) {
 	.invitation-outer {
 		width: 100%;

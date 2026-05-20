@@ -25,7 +25,7 @@
 				<div class="slide-hero__letter" aria-hidden="true">
 					<span class="slide-hero__letter-text font-script">Приглашение</span>
 					<video
-						src="/animated/output.webm"
+						id="hero-video"
 						muted
 						playsinline
 						preload="metadata"
@@ -293,17 +293,84 @@
 						</div>
 
 						<div class="slide-footer__content">
-							<p class="slide-footer__rsvp-text font-script">
-								Пожалуйста подтвердите свое присутствие нажав на кнопку ниже:
-							</p>
-							<a
-								href="https://forms.yandex.com"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="btn-wedding slide-footer__btn font-serif"
-							>
-								Я буду!
-							</a>
+							<form id="rsvp-form" class="rsvp-form" action="https://formspree.io/f/xeedaeld" method="POST">
+								<p class="rsvp-form__title font-script">Подтвердите присутствие</p>
+
+								<div class="rsvp-form__row">
+									<div class="rsvp-form__field">
+										<label class="rsvp-form__label font-serif" for="first-name">Имя</label>
+										<input
+											id="first-name"
+											class="rsvp-form__input"
+											type="text"
+											name="Имя"
+											required
+											autocomplete="given-name"
+										/>
+										<span data-fs-error="first-name"></span>
+									</div>
+									<div class="rsvp-form__field">
+										<label class="rsvp-form__label font-serif" for="last-name">Фамилия</label>
+										<input
+											id="last-name"
+											class="rsvp-form__input"
+											type="text"
+											name="Фамилия"
+											required
+											autocomplete="family-name"
+										/>
+										<span data-fs-error="last-name"></span>
+									</div>
+								</div>
+
+								<div class="rsvp-form__row">
+									<div class="rsvp-form__field">
+										<label class="rsvp-form__label font-serif" for="adults">Взрослых</label>
+										<input
+											id="adults"
+											class="rsvp-form__input"
+											type="number"
+											name="Взрослых"
+											min="1"
+											max="20"
+											value="1"
+											required
+										/>
+									</div>
+									<div class="rsvp-form__field">
+										<label class="rsvp-form__label font-serif" for="children">Детей</label>
+										<input
+											id="children"
+											class="rsvp-form__input"
+											type="number"
+											name="Детей"
+											min="0"
+											max="20"
+											value="0"
+											required
+										/>
+									</div>
+								</div>
+
+								<label class="rsvp-form__checkbox">
+									<input type="checkbox" name="Соблюдение дресс-кода" required />
+									<span class="rsvp-form__checkmark"></span>
+									<span class="rsvp-form__checkbox-label font-serif">
+										Я буду соблюдать дресс-код мероприятия
+									</span>
+								</label>
+
+								<div data-fs-error></div>
+
+								<button type="submit" class="btn-wedding rsvp-form__btn font-serif" data-fs-submit-btn>
+									Отправить
+								</button>
+
+								<div data-fs-success class="rsvp-form__success font-script">
+									Спасибо! Ждём вас!
+								</div>
+							</form>
+
 							<p class="slide-footer__closing font-script">
 								<span class="slide-footer__closing-cap-lg">Л</span><span>юбим Вас и </span><span class="slide-footer__closing-cap">Ж</span><span>дем!</span>
 							</p>
@@ -351,44 +418,45 @@ onMounted(async () => {
 		// ignore if splitting fails in this environment
 	}
 
-	const videos = Array.from(pageRoot.value.querySelectorAll('video')) as HTMLVideoElement[]
-	videos.forEach((video) => {
-		video.autoplay = false
-		video.muted = true
-		video.preload = 'metadata'
-		video.pause()
-		video.currentTime = 0
-		video.style.opacity = '1'
-		video.style.transition = 'opacity 0.3s ease'
+	const heroVideo = document.getElementById('hero-video') as HTMLVideoElement | null
+	if (heroVideo) {
+		heroVideo.src = '/animated/output.webm'
+		heroVideo.autoplay = false
+		heroVideo.muted = true
+		heroVideo.preload = 'metadata'
+		heroVideo.pause()
+		heroVideo.currentTime = 0
+		heroVideo.style.opacity = '1'
+		heroVideo.style.transition = 'opacity 0.3s ease'
 
 		const showFirstFrame = () => {
-			video.currentTime = 0
-			video.pause()
-			video.style.opacity = '1'
+			heroVideo.currentTime = 0
+			heroVideo.pause()
+			heroVideo.style.opacity = '1'
 		}
 
-		if (video.readyState >= 1) {
+		if (heroVideo.readyState >= 1) {
 			showFirstFrame()
 		} else {
-			video.addEventListener('loadeddata', showFirstFrame, { once: true })
+			heroVideo.addEventListener('loadeddata', showFirstFrame, { once: true })
 		}
 
-		video.addEventListener(
+		heroVideo.addEventListener(
 			'ended',
 			() => {
-				video.pause()
-				video.style.opacity = '0'
-				video.style.display = 'none'
+				heroVideo.pause()
+				heroVideo.style.opacity = '0'
+				heroVideo.style.display = 'none'
 			},
 			{ once: true }
 		)
 
 		setTimeout(() => {
-			video.play().catch(() => {
+			heroVideo.play().catch(() => {
 				// ignore autoplay block or playback failure
 			})
 		}, 1000)
-	})
+	}
 
 	const sections = Array.from(pageRoot.value.querySelectorAll('section')) as HTMLElement[]
 
@@ -458,5 +526,15 @@ onMounted(async () => {
 	)
 
 	sections.forEach((section) => observer.observe(section))
+
+	// Initialize Formspree AJAX form
+	try {
+		const formEl = document.getElementById('rsvp-form')
+		if (formEl && typeof window.formspree === 'function') {
+			window.formspree('initForm', { formElement: '#rsvp-form', formId: 'xeedaeld' })
+		}
+	} catch (e) {
+		// fail silently if Formspree can't load
+	}
 })
 </script>
