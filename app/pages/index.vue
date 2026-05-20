@@ -296,60 +296,55 @@
 							<form id="rsvp-form" class="rsvp-form" action="https://formspree.io/f/xeedaeld" method="POST">
 								<p class="rsvp-form__title font-script">Подтвердите присутствие</p>
 
-								<div class="rsvp-form__row">
-									<div class="rsvp-form__field">
-										<label class="rsvp-form__label font-serif" for="first-name">Имя</label>
-										<input
-											id="first-name"
-											class="rsvp-form__input"
-											type="text"
-											name="Имя"
-											required
-											autocomplete="given-name"
-										/>
-										<span data-fs-error="first-name"></span>
-									</div>
-									<div class="rsvp-form__field">
-										<label class="rsvp-form__label font-serif" for="last-name">Фамилия</label>
-										<input
-											id="last-name"
-											class="rsvp-form__input"
-											type="text"
-											name="Фамилия"
-											required
-											autocomplete="family-name"
-										/>
-										<span data-fs-error="last-name"></span>
-									</div>
+								<div class="rsvp-form__field">
+									<label class="rsvp-form__label font-serif" for="first-name">Имя</label>
+									<input
+										id="first-name"
+										class="rsvp-form__input"
+										type="text"
+										name="Имя"
+										required
+										autocomplete="given-name"
+									/>
+									<span data-fs-error="first-name"></span>
 								</div>
-
-								<div class="rsvp-form__row">
-									<div class="rsvp-form__field">
-										<label class="rsvp-form__label font-serif" for="adults">Взрослых</label>
-										<input
-											id="adults"
-											class="rsvp-form__input"
-											type="number"
-											name="Взрослых"
-											min="1"
-											max="20"
-											value="1"
-											required
-										/>
-									</div>
-									<div class="rsvp-form__field">
-										<label class="rsvp-form__label font-serif" for="children">Детей</label>
-										<input
-											id="children"
-											class="rsvp-form__input"
-											type="number"
-											name="Детей"
-											min="0"
-											max="20"
-											value="0"
-											required
-										/>
-									</div>
+								<div class="rsvp-form__field">
+									<label class="rsvp-form__label font-serif" for="last-name">Фамилия</label>
+									<input
+										id="last-name"
+										class="rsvp-form__input"
+										type="text"
+										name="Фамилия"
+										required
+										autocomplete="family-name"
+									/>
+									<span data-fs-error="last-name"></span>
+								</div>
+								<div class="rsvp-form__field">
+									<label class="rsvp-form__label font-serif" for="adults">Взрослых</label>
+									<input
+										id="adults"
+										class="rsvp-form__input"
+										type="number"
+										name="Взрослых"
+										min="1"
+										max="20"
+										value="1"
+										required
+									/>
+								</div>
+								<div class="rsvp-form__field">
+									<label class="rsvp-form__label font-serif" for="children">Детей</label>
+									<input
+										id="children"
+										class="rsvp-form__input"
+										type="number"
+										name="Детей"
+										min="0"
+										max="20"
+										value="0"
+										required
+									/>
 								</div>
 
 								<label class="rsvp-form__checkbox">
@@ -370,16 +365,15 @@
 									Спасибо! Ждём вас!
 								</div>
 							</form>
-
-							<p class="slide-footer__closing font-script">
-								<span class="slide-footer__closing-cap-lg">Л</span><span>юбим Вас и </span><span class="slide-footer__closing-cap">Ж</span><span>дем!</span>
-							</p>
 						</div>
 					</section>
 				</div>
 			</main>
 		</div>
 	</div>
+
+	<!-- Background music -->
+	<audio id="bg-music" src="/wedding/sounds/page_music.mp3" preload="auto" loop></audio>
 </template>
 
 <script setup lang="ts">
@@ -526,6 +520,15 @@ onMounted(async () => {
 	)
 
 	sections.forEach((section) => observer.observe(section))
+
+	// Background music at 50% volume
+	const bgMusic = document.getElementById('bg-music') as HTMLAudioElement | null
+	if (bgMusic) {
+		bgMusic.volume = 0.5
+		bgMusic.play().catch(() => {
+			// autoplay blocked by browser — user will need to interact first
+		})
+	}
 
 	// Initialize Formspree AJAX form
 	try {
