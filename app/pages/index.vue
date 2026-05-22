@@ -43,7 +43,7 @@
 								на нашу Свадьбу!
 							</p>
 							<p class="slide-invite__date font-script" data-split="chars">29.08.2026</p>
-							<p class="slide-invite__venue-label font-serif">Место проведения:</p>
+							<p class="slide-invite__venue-label font-serif" data-split="chars">Место проведения:</p>
 						</div>
 					</section>
 
@@ -75,23 +75,23 @@
 						</div>
 
 						<div class="slide-address__content">
-							<p class="slide-address__heading font-serif">
+							<p class="slide-address__heading font-serif" data-split="chars">
 								<span class="slide-address__heading-cap">А</span>дрес
 							</p>
-							<p class="slide-address__text font-script">
+							<p class="slide-address__text font-script" data-split="chars">
 								Ростовская область,<br />
 								Красносулинский<br />
 								район<br />
 								с.Табунщиково
 							</p>
 							<div class="slide-address__coords-block">
-								<p class="slide-address__coords-label font-script">
+								<p class="slide-address__coords-label font-script" data-split="chars">
 									Координаты для<br />
 									навигатора:
 								</p>
 								<div class="slide-address__coords-values font-script">
-									<p>Широта: 47.8431907</p>
-									<p>Долгота: 40.2893761</p>
+									<p data-split="chars">Широта: 47.8431907</p>
+									<p data-split="chars">Долгота: 40.2893761</p>
 								</div>
 							</div>
 						</div>
@@ -152,7 +152,7 @@
 						<div class="slide-details__title-wrap">
 							<h2 id="details-title" class="slide-details__title font-serif" data-split="chars">Детали
 							</h2>
-							<p class="slide-details__desc font-script">
+							<p class="slide-details__desc font-script" data-split="chars">
 								Наша свадьба будет<br />
 								проходить в испанском стиле<br />
 								Основные элементы - кружево и<br />
@@ -164,7 +164,7 @@
 					<!-- Slide 6: Dress code -->
 					<section class="slide-dresscode slide-animate" aria-labelledby="dresscode-title">
 						<div>
-							<p class="slide-dresscode__items-text font-script">
+							<p class="slide-dresscode__items-text font-script" data-split="chars">
 								Для поддерживания стилистики гостям будут<br />
 								вручены зонтики и вееры
 							</p>
@@ -186,8 +186,8 @@
 
 						<div class="slide-dresscode__row">
 							<div class="slide-dresscode__text-col">
-								<h2 id="dresscode-title" class="slide-dresscode__heading font-serif">Дресс-код:</h2>
-								<p class="slide-dresscode__body font-script">
+								<h2 id="dresscode-title" class="slide-dresscode__heading font-serif" data-split="chars">Дресс-код:</h2>
+								<p class="slide-dresscode__body font-script" data-split="chars">
 									мы будем очень<br />
 									благодарны<br />
 									вам,если у вас<br />
@@ -213,7 +213,7 @@
 						<div class="slide-schedule-header__bg" aria-hidden="true">
 							<img src="/figma/Sheludle-title-bg.png" alt="" width="1025" height="117" />
 						</div>
-						<h2 class="slide-schedule-header__title font-script">
+						<h2 class="slide-schedule-header__title font-script" data-split="chars">
 							<span class="slide-schedule-header__cap">С</span>вадебное расписание
 						</h2>
 					</section>
@@ -232,8 +232,8 @@
 
 						<div class="slide-schedule__content">
 							<div class="slide-schedule__vikup">
-								<p class="slide-schedule__vikup-title font-script">Выкуп</p>
-								<p class="slide-schedule__vikup-text font-script">
+								<p class="slide-schedule__vikup-title font-script" data-split="chars">Выкуп</p>
+								<p class="slide-schedule__vikup-text font-script" data-split="chars">
 									12:30 Выкуп в доме Невесты<br />
 									Будем рады видеть вас на выкупе,но также вы можете присоединиться к нам уже в
 									загородном клубе
@@ -243,25 +243,25 @@
 							<div class="slide-schedule__hunterburg">
 								<div class="slide-schedule__banner">
 									<img src="/figma/schedule-hunterburg-bg.png" alt="" />
-									<p class="slide-schedule__banner-text font-script">
+									<p class="slide-schedule__banner-text font-script" data-split="chars">
 										<span class="slide-schedule__banner-cap">H</span>unterburg
 									</p>
 								</div>
 								<ul class="slide-schedule__timeline font-script">
-									<li class="slide-schedule__timeline-item-small">15:30 Сбор гостей</li>
-									<li class="slide-schedule__timeline-item-medium">16:30 Торжественная церемония</li>
-									<li class="slide-schedule__timeline-item-big">18:00 Банкет</li>
+									<li class="slide-schedule__timeline-item-small" data-split="chars">15:30 Сбор гостей</li>
+									<li class="slide-schedule__timeline-item-medium" data-split="chars">16:30 Торжественная церемония</li>
+									<li class="slide-schedule__timeline-item-big" data-split="chars">18:00 Банкет</li>
 								</ul>
 							</div>
 
 							<div class="slide-schedule__second-day">
 								<div class="slide-schedule__second-banner">
 									<img src="/figma/schedule-second-day-bg.png" alt="" />
-									<p class="font-script">
+									<p class="font-script" data-split="chars">
 										<span class="slide-schedule__second-cap">В</span>торой день
 									</p>
 								</div>
-								<p class="slide-schedule__second-text font-script">
+								<p class="slide-schedule__second-text font-script" data-split="chars">
 									На территории клуба есть уютные домики для гостей, в которых вы сможете переночевать
 									и присоединиться к нам на второй <br />день свадьбы.<br />
 									Домики оборудованы всем необходимым (полотенца, тапочки, халаты).<br />
@@ -287,7 +287,7 @@
 						<div class="slide-footer__content">
 							<form id="rsvp-form" class="rsvp-form" action="https://formspree.io/f/xeedaeld"
 								method="POST">
-								<p class="rsvp-form__title font-script">Пожалуйста подтвердите свое
+								<p class="rsvp-form__title font-script" data-split="chars">Пожалуйста подтвердите свое
 									присутствие</p>
 
 								<div class="rsvp-form__field">
@@ -316,18 +316,18 @@
 								<label class="rsvp-form__checkbox">
 									<input type="checkbox" name="Соблюдение дресс-кода" required />
 									<span class="rsvp-form__checkmark"></span>
-									<span class="rsvp-form__checkbox-label font-serif">
+									<span class="rsvp-form__checkbox-label font-serif" data-split="chars">
 										Я буду соблюдать дресс-код мероприятия
 									</span>
 								</label>
 
 								<div data-fs-error></div>
 
-								<button type="submit" class="btn-wedding rsvp-form__btn font-serif" data-fs-submit-btn>
+								<button type="submit" class="btn-wedding rsvp-form__btn font-serif" data-split="chars" data-fs-submit-btn>
 									Отправить
 								</button>
 
-								<div data-fs-success class="rsvp-form__success font-script">
+								<div data-fs-success class="rsvp-form__success font-script" data-split="chars">
 									Спасибо! Ждём вас!
 								</div>
 							</form>
@@ -388,6 +388,9 @@ onMounted(async () => {
 		// ignore if splitting fails in this environment
 	}
 
+	// Sequential animation queue: each section waits for previous to finish
+	let animQueue = Promise.resolve()
+
 	function initScrollObserver() {
 		if (!pageRoot.value) return
 		const sections = Array.from(
@@ -410,31 +413,238 @@ onMounted(async () => {
 						// stop observing to avoid re-triggers
 						observer.unobserve(el)
 
-						// schedule animations (no delays — all sections animate on scroll)
-						setTimeout(() => {
-							// character animation
-							const chars = el.querySelectorAll('.char')
-							if (chars.length && gsap) {
-								gsap.fromTo(
-									chars,
-									{ y: 12, opacity: 0, rotationX: -6 },
-									{ y: 0, opacity: 1, rotationX: 0, duration: 0.32, stagger: 0.02, ease: 'power2.out' }
-								)
-							}
+						// chain into sequential queue — each section waits for previous
+						animQueue = animQueue.then(
+							() =>
+								new Promise<void>((resolve) => {
+									if (!gsap) {
+										el.classList.add('is-visible')
+										resolve()
+										return
+									}
 
-							// photos animation (light drop + rotation)
-							const imgs = Array.from(el.querySelectorAll('img')) as HTMLElement[]
-							if (imgs.length && gsap) {
-								gsap.fromTo(
-									imgs,
-									{ y: -30, rotation: 8, opacity: 0 },
-									{ y: 0, rotation: 0, opacity: 1, duration: 0.6, stagger: 0.06, ease: 'power3.out' }
-								)
-							}
+									// GSAP timeline: chars in DOM order → then images
+									const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
 
-							// fallback simple reveal class for non-splitted content
-							el.classList.add('is-visible')
-						}, 0)
+									// Make section visible immediately (CSS transition handles fade)
+									tl.call(() => el.classList.add('is-visible'), [], 0)
+
+									const textGroups = Array.from(el.querySelectorAll('[data-split="chars"]'))
+									const imgs = Array.from(el.querySelectorAll('img'))
+
+									if (el.classList.contains('slide-address')) {
+										// Address: photos first, then text
+										if (imgs.length) {
+											tl.fromTo(
+												imgs,
+												{ y: -30, rotation: 8, opacity: 0 },
+												{ y: 0, rotation: 0, opacity: 1, duration: 0.8, stagger: 0.16, ease: 'power3.out' },
+												0
+											)
+										}
+										textGroups.forEach((group) => {
+											const chars = group.querySelectorAll('.char')
+											if (chars.length) {
+												tl.fromTo(
+													chars,
+													{ y: 12, opacity: 0, rotationX: -6 },
+													{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+													'>-=0.15'
+												)
+											}
+										})
+
+										// Map button as a single block after all coordinates
+										const mapBtn = el.querySelector<HTMLElement>('.slide-address__map-btn')
+										if (mapBtn) {
+											tl.fromTo(
+												mapBtn,
+												{ opacity: 0, y: 10 },
+												{ opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }
+											)
+										}
+									} else if (el.classList.contains('slide-dresscode')) {
+										// Dresscode: items-text → icons (stagger) → heading/body → palette/peoples
+										const itemsText = el.querySelector('.slide-dresscode__items-text')
+										const itemsChars = itemsText?.querySelectorAll('.char')
+										if (itemsChars?.length) {
+											tl.fromTo(
+												itemsChars,
+												{ y: 12, opacity: 0, rotationX: -6 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												0
+											)
+										}
+
+										const icons = Array.from(el.querySelectorAll('.slide-dresscode__icon img'))
+										if (icons.length) {
+											tl.fromTo(
+												icons,
+												{ y: -30, rotation: 8, opacity: 0 },
+												{ y: 0, rotation: 0, opacity: 1, duration: 0.8, stagger: 0.16, ease: 'power3.out' }
+											)
+										}
+
+										const headingChars = el.querySelectorAll('.slide-dresscode__heading .char')
+										if (headingChars.length) {
+											tl.fromTo(
+												headingChars,
+												{ y: 12, opacity: 0, rotationX: -6 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												'>-=0.15'
+											)
+										}
+
+										const bodyChars = el.querySelectorAll('.slide-dresscode__body .char')
+										if (bodyChars.length) {
+											tl.fromTo(
+												bodyChars,
+												{ y: 12, opacity: 0, rotationX: -6 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												'>-=0.15'
+											)
+										}
+
+										const palettePeoples = Array.from(el.querySelectorAll('.slide-dresscode__palette img, .slide-dresscode__peoples img'))
+										if (palettePeoples.length) {
+											tl.fromTo(
+												palettePeoples,
+												{ y: -30, rotation: 8, opacity: 0 },
+												{ y: 0, rotation: 0, opacity: 1, duration: 0.8, stagger: 0.16, ease: 'power3.out' }
+											)
+										}
+									} else if (el.classList.contains('slide-schedule-header')) {
+										// Schedule header: bg + title chars together as one block
+										const headerBg = el.querySelector('.slide-schedule-header__bg img')
+										if (headerBg) {
+											tl.fromTo(
+												headerBg,
+												{ y: -30, rotation: 8, opacity: 0 },
+												{ y: 0, rotation: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
+												0
+											)
+										}
+										const titleChars = el.querySelectorAll('.slide-schedule-header__title .char')
+										if (titleChars.length) {
+											tl.fromTo(
+												titleChars,
+												{ y: 12, opacity: 0, rotationX: -6 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												'<'
+											)
+										}
+									} else if (el.classList.contains('slide-schedule')) {
+										// Schedule: lace → banner + strip → second-banner + barrel → vikup → timeline → second-text
+										const laceLeft = el.querySelector('.slide-schedule__lace-left img')
+										if (laceLeft) {
+											tl.fromTo(
+												laceLeft,
+												{ y: -30, rotation: 8, opacity: 0 },
+												{ y: 0, rotation: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
+												0
+											)
+										}
+
+										const bannerImg = el.querySelector('.slide-schedule__banner img')
+										if (bannerImg) {
+											tl.fromTo(
+												bannerImg,
+												{ y: -30, rotation: 8, opacity: 0 },
+												{ y: 0, rotation: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
+												'>-=0.15'
+											)
+										}
+										const bannerChars = el.querySelectorAll('.slide-schedule__banner-text .char')
+										if (bannerChars.length) {
+											tl.fromTo(
+												bannerChars,
+												{ y: 12, opacity: 0, rotationX: -6 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												'<'
+											)
+										}
+
+										const stripImg = el.querySelector('.slide-schedule__strip img')
+										if (stripImg) {
+											tl.fromTo(
+												stripImg,
+												{ y: -30, rotation: 8, opacity: 0 },
+												{ y: 0, rotation: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+											)
+										}
+
+										const secondBannerImg = el.querySelector('.slide-schedule__second-banner img')
+										if (secondBannerImg) {
+											tl.fromTo(
+												secondBannerImg,
+												{ y: -30, rotation: 8, opacity: 0 },
+												{ y: 0, rotation: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
+												'>-=0.15'
+											)
+										}
+										const secondChars = el.querySelectorAll('.slide-schedule__second-banner .font-script .char')
+										if (secondChars.length) {
+											tl.fromTo(
+												secondChars,
+												{ y: 12, opacity: 0, rotationX: -6 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												'<'
+											)
+										}
+
+										const barrelImg = el.querySelector('.slide-schedule__barrel img')
+										if (barrelImg) {
+											tl.fromTo(
+												barrelImg,
+												{ y: -30, rotation: 8, opacity: 0 },
+												{ y: 0, rotation: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+											)
+										}
+
+										// Remaining text groups: vikup → timeline → second-day text
+										const remainingTexts = Array.from(el.querySelectorAll('[data-split="chars"]'))
+											.filter((g) => !g.closest('.slide-schedule__banner') && !g.closest('.slide-schedule__second-banner'))
+										remainingTexts.forEach((group) => {
+											const chars = group.querySelectorAll('.char')
+											if (chars.length) {
+												tl.fromTo(
+													chars,
+													{ y: 12, opacity: 0, rotationX: -6 },
+													{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+													'>-=0.15'
+												)
+											}
+										})
+									} else {
+										// Default: text groups first, then images
+										textGroups.forEach((group) => {
+											const chars = group.querySelectorAll('.char')
+											if (chars.length) {
+												tl.fromTo(
+													chars,
+													{ y: 12, opacity: 0, rotationX: -6 },
+													{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+													'>-=0.15'
+												)
+											}
+										})
+										if (imgs.length) {
+											// Invite: images animate simultaneously with text
+											// Others: images wait for all text groups to finish
+											const position = el.classList.contains('slide-invite') ? 0 : undefined
+											tl.fromTo(
+												imgs,
+												{ y: -30, rotation: 8, opacity: 0 },
+												{ y: 0, rotation: 0, opacity: 1, duration: 0.8, stagger: 0.16, ease: 'power3.out' },
+												position
+											)
+										}
+									}
+
+									// Resolve queue promise when this section's animation finishes
+									tl.call(resolve)
+								})
+						)
 					})
 			},
 			{
