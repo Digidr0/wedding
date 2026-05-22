@@ -9,7 +9,7 @@
 .invitation-page {
 	position: relative;
 	width: var(--page-width);
-	height: 9500px;
+	height: 8967px;
 	background: var(--wedding-white);
 	overflow: hidden;
 }
@@ -161,7 +161,7 @@
 .slide-invite {
 	position: absolute;
 	left: 0;
-	top: 533px;
+	top: 0;
 	width: 100%;
 	height: 568px;
 	padding: 20px 0 0 80px;
@@ -233,7 +233,7 @@
 .slide-venue {
 	position: absolute;
 	left: 0;
-	top: 1101px;
+	top: 568px;
 	width: 100%;
 	height: 880px;
 	z-index: 1;
@@ -327,7 +327,7 @@
 .slide-address {
 	position: absolute;
 	left: -77px;
-	top: 1896px;
+	top: 1363px;
 	width: 1103px;
 	height: 780px;
 	z-index: 2;
@@ -450,7 +450,7 @@
 .slide-details {
 	position: absolute;
 	left: 0;
-	top: 2866px;
+	top: 2333px;
 	width: 100%;
 	height: 1863px;
 	padding: 8px 265px;
@@ -589,7 +589,7 @@
 .slide-dresscode {
 	position: absolute;
 	left: 0;
-	top: 4729px;
+	top: 4196px;
 	width: 100%;
 	padding: 0 10px;
 }
@@ -721,7 +721,7 @@
 .slide-schedule-header {
 	position: absolute;
 	left: 0;
-	top: 5794px;
+	top: 5261px;
 	width: 100%;
 	height: 117px;
 	display: flex;
@@ -762,7 +762,7 @@
 .slide-schedule-paper {
 	position: absolute;
 	left: 0;
-	top: 5911px;
+	top: 5378px;
 	width: 100%;
 	height: 1366px;
 	z-index: 0;
@@ -782,7 +782,7 @@
 .slide-schedule {
 	position: absolute;
 	left: 0;
-	top: 5911px;
+	top: 5378px;
 	width: 100%;
 	height: 1366px;
 	z-index: 1;
@@ -970,7 +970,7 @@
 .slide-footer {
 	position: absolute;
 	left: 0;
-	top: 7536px;
+	top: 7003px;
 	width: 100%;
 	height: 1300px;
 	display: flex;
