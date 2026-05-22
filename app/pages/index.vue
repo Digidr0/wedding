@@ -381,7 +381,7 @@ onMounted(async () => {
 
 	const heroVideo = document.getElementById('hero-video') as HTMLVideoElement | null
 	if (heroVideo) {
-		heroVideo.src = '/animated/output.webm'
+		heroVideo.src = '/wedding/animated/output.webm'
 		heroVideo.autoplay = false
 		heroVideo.muted = true
 		heroVideo.preload = 'metadata'
