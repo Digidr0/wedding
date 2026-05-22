@@ -20,6 +20,25 @@
 	height: 100%;
 }
 
+/* Hero-loading state: only slide-hero visible */
+.invitation-page.hero-visible .slide-animate:not(.slide-hero) {
+	opacity: 0 !important;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.invitation-page.hero-visible .slide-hero {
+	opacity: 1;
+	transform: translateY(0);
+	z-index: 100;
+}
+
+.invitation-page:not(.hero-visible) .slide-hero {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.6s ease;
+}
+
 .font-script {
 	font-family: var(--font-script);
 }

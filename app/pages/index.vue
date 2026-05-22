@@ -1,7 +1,7 @@
 <template>
 	<div class="invitation-outer">
 		<div class="invitation-scaler">
-			<main ref="pageRoot" class="invitation-page" aria-label="Приглашение на свадьбу Alexander и Milaslava">
+			<main ref="pageRoot" class="invitation-page" :class="{ 'hero-visible': !videoEnded }" aria-label="Приглашение на свадьбу Alexander и Milaslava" @click="onHeroClick">
 				<div class="invitation-page__inner">
 					<!-- Slide 1: Hero -->
 					<section class="slide-hero slide-animate" aria-labelledby="hero-title">
@@ -23,7 +23,6 @@
 							Alexander &amp;Milaslava
 						</h1>
 						<div class="slide-hero__letter" aria-hidden="true">
-							<span class="slide-hero__letter-text font-script">Приглашение</span>
 							<video id="hero-video" muted playsinline preload="metadata" aria-hidden="true"></video>
 						</div>
 					</section>
@@ -349,10 +348,20 @@ import { useHead } from '#imports'
 // Load heavy browser-only libs dynamically inside onMounted to avoid SSR errors
 
 const pageRoot = ref<HTMLElement | null>(null)
+const videoEnded = ref(false)
 
 useHead({
 	title: 'Alexander & Milaslava — Wedding',
 })
+
+function onHeroClick() {
+	const heroVideo = document.getElementById('hero-video') as HTMLVideoElement | null
+	if (heroVideo && !videoEnded.value) {
+		heroVideo.play().catch(() => {
+			// ignore
+		})
+	}
+}
 
 onMounted(async () => {
 	if (!pageRoot.value) return
@@ -377,6 +386,64 @@ onMounted(async () => {
 		Splitting({ target: pageRoot.value.querySelectorAll('[data-split="chars"]') })
 	} catch (e) {
 		// ignore if splitting fails in this environment
+	}
+
+	function initScrollObserver() {
+		if (!pageRoot.value) return
+		const sections = Array.from(
+			pageRoot.value.querySelectorAll('section:not(.slide-hero)')
+		) as HTMLElement[]
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				// animate in the order entries become visible
+				entries
+					.filter((e) => e.isIntersecting)
+					.sort((a, b) => {
+						const aRect = a.target.getBoundingClientRect()
+						const bRect = b.target.getBoundingClientRect()
+						return aRect.top - bRect.top
+					})
+					.forEach((entry) => {
+						const el = entry.target as HTMLElement
+
+						// stop observing to avoid re-triggers
+						observer.unobserve(el)
+
+						// schedule animations (no delays — all sections animate on scroll)
+						setTimeout(() => {
+							// character animation
+							const chars = el.querySelectorAll('.char')
+							if (chars.length && gsap) {
+								gsap.fromTo(
+									chars,
+									{ y: 12, opacity: 0, rotationX: -6 },
+									{ y: 0, opacity: 1, rotationX: 0, duration: 0.32, stagger: 0.02, ease: 'power2.out' }
+								)
+							}
+
+							// photos animation (light drop + rotation)
+							const imgs = Array.from(el.querySelectorAll('img')) as HTMLElement[]
+							if (imgs.length && gsap) {
+								gsap.fromTo(
+									imgs,
+									{ y: -30, rotation: 8, opacity: 0 },
+									{ y: 0, rotation: 0, opacity: 1, duration: 0.6, stagger: 0.06, ease: 'power3.out' }
+								)
+							}
+
+							// fallback simple reveal class for non-splitted content
+							el.classList.add('is-visible')
+						}, 0)
+					})
+			},
+			{
+				threshold: 0.15,
+				rootMargin: '0px 0px -10% 0px',
+			}
+		)
+
+		sections.forEach((section) => observer.observe(section))
 	}
 
 	const heroVideo = document.getElementById('hero-video') as HTMLVideoElement | null
@@ -405,9 +472,9 @@ onMounted(async () => {
 		heroVideo.addEventListener(
 			'ended',
 			() => {
-				heroVideo.pause()
-				heroVideo.style.opacity = '0'
+				videoEnded.value = true
 				heroVideo.style.display = 'none'
+				initScrollObserver()
 			},
 			{ once: true }
 		)
@@ -417,76 +484,20 @@ onMounted(async () => {
 				// ignore autoplay block or playback failure
 			})
 		}, 1000)
+
+		// Fallback: auto-skip hero after 10s if video never ended (e.g. blocked / error)
+		setTimeout(() => {
+			if (!videoEnded.value) {
+				videoEnded.value = true
+				if (heroVideo) heroVideo.style.display = 'none'
+				initScrollObserver()
+			}
+		}, 10000)
+	} else {
+		// No video element at all — jump straight to content
+		videoEnded.value = true
+		initScrollObserver()
 	}
-
-	const sections = Array.from(pageRoot.value.querySelectorAll('section')) as HTMLElement[]
-
-	const observer = new IntersectionObserver(
-		(entries) => {
-			// animate in the order entries become visible
-			entries
-				.filter((e) => e.isIntersecting)
-				.sort((a, b) => {
-					const aRect = a.target.getBoundingClientRect()
-					const bRect = b.target.getBoundingClientRect()
-					return aRect.top - bRect.top
-				})
-				.forEach((entry) => {
-					const el = entry.target as HTMLElement
-
-					// per-section delay map (seconds)
-					const delayMap: Record<string, number> = {
-						'slide-invite': 3,
-						'slide-venue': 4,
-						'slide-address': 5,
-					}
-
-					// determine delay based on section class
-					let delay = 0
-					for (const cls in delayMap) {
-						if (el.classList.contains(cls)) {
-							delay = delayMap[cls]
-							break
-						}
-					}
-
-					// stop observing to avoid re-triggers
-					observer.unobserve(el)
-
-					// schedule animations after delay (ms)
-					setTimeout(() => {
-						// character animation
-						const chars = el.querySelectorAll('.char')
-						if (chars.length && gsap) {
-							gsap.fromTo(
-								chars,
-								{ y: 12, opacity: 0, rotationX: -6 },
-								{ y: 0, opacity: 1, rotationX: 0, duration: 0.32, stagger: 0.02, ease: 'power2.out' }
-							)
-						}
-
-						// photos animation (light drop + rotation)
-						const imgs = Array.from(el.querySelectorAll('img')) as HTMLElement[]
-						if (imgs.length && gsap) {
-							gsap.fromTo(
-								imgs,
-								{ y: -30, rotation: 8, opacity: 0 },
-								{ y: 0, rotation: 0, opacity: 1, duration: 0.6, stagger: 0.06, ease: 'power3.out' }
-							)
-						}
-
-						// fallback simple reveal class for non-splitted content
-						el.classList.add('is-visible')
-					}, delay * 1000)
-				})
-		},
-		{
-			threshold: 0.15,
-			rootMargin: '0px 0px -10% 0px',
-		}
-	)
-
-	sections.forEach((section) => observer.observe(section))
 
 	// Background music at 50% volume
 	const bgMusic = document.getElementById('bg-music') as HTMLAudioElement | null
