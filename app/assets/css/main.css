@@ -1,9 +1,17 @@
+@font-face {
+	font-family: 'Anastasia';
+	src: url('../fonts/Anastasia.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
 :root {
 	--wedding-ink: #524335;
 	--wedding-ink-accent: #654c2a;
-	--wedding-btn: #c4bbb2;
+	--wedding-btn: #f2f1ea;
 	--wedding-white: #ffffff;
-	--font-script: 'Great Vibes', 'Brush Script MT', cursive;
+	--font-script: 'Anastasia', 'Great Vibes', 'Brush Script MT', cursive;
 	--font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
 	--page-width: 1024.5px;
 }

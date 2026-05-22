@@ -9,7 +9,7 @@
 .invitation-page {
 	position: relative;
 	width: var(--page-width);
-	height: 8500px;
+	height: 9500px;
 	background: var(--wedding-white);
 	overflow: hidden;
 }
@@ -129,6 +129,7 @@
 	top: 85px;
 	width: 219px;
 	aspect-ratio: 439 / 983;
+	z-index: -2;
 }
 
 .slide-hero__deco img {
@@ -145,6 +146,7 @@
 	width: 100%;
 	height: 568px;
 	padding: 20px 0 0 80px;
+	z-index: 2;
 }
 
 .slide-invite__lace {
@@ -167,12 +169,14 @@
 	top: 0;
 	width: 327px;
 	height: 472px;
+	z-index: 3;
 }
 
 .slide-invite__couple img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	z-index: 3;
 }
 
 .slide-invite__text {
@@ -212,7 +216,7 @@
 	left: 0;
 	top: 1101px;
 	width: 100%;
-	height: 720px;
+	height: 880px;
 	z-index: 1;
 }
 
@@ -248,7 +252,7 @@
 
 .slide-venue__photos {
 	position: absolute;
-	top: 40px;
+	top: 210px;
 	left: 0;
 	right: 0;
 	height: 650px;
@@ -262,7 +266,7 @@
 	top: 0;
 	width: 486px;
 	height: 591px;
-	transform: rotate(-11deg);
+	transform: rotate(5deg);
 	transform-origin: center center;
 	z-index: 0;
 }
@@ -273,7 +277,7 @@
 	top: 15px;
 	width: 480px;
 	height: 576px;
-	transform: rotate(9deg);
+	transform: rotate(-5deg);
 	transform-origin: center center;
 	z-index: 0;
 }
@@ -304,7 +308,7 @@
 .slide-address {
 	position: absolute;
 	left: -77px;
-	top: 1540px;
+	top: 1896px;
 	width: 1103px;
 	height: 780px;
 	z-index: 2;
@@ -334,7 +338,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 80px;
+	gap: 20px;
 	z-index: 2;
 }
 
@@ -353,13 +357,14 @@
 .slide-address__text {
 	margin: 0;
 	font-family: var(--font-script);
-	font-size: 50px;
-	line-height: normal;
+	font-size: 55px;
+	line-height: 150%;
 	color: var(--wedding-ink);
 	width: 395px;
 }
 
 .slide-address__coords-block {
+	margin-top: 60px;
 	display: grid;
 	grid-template-columns: 250px 221px;
 	gap: 0;
@@ -375,13 +380,14 @@
 }
 
 .slide-address__coords-values {
-	margin: 66px 0 0;
+	margin: 46px 0 0;
 	font-family: var(--font-script);
-	font-size: 27px;
+	font-size: 45px;
 	color: var(--wedding-ink);
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 30px;
+	white-space: nowrap;
 }
 
 .slide-address__coords-values p {
@@ -425,7 +431,7 @@
 .slide-details {
 	position: absolute;
 	left: 0;
-	top: 2330px;
+	top: 2866px;
 	width: 100%;
 	height: 1863px;
 	padding: 8px 265px;
@@ -434,7 +440,7 @@
 .slide-details__title-wrap {
 	position: relative;
 	z-index: 2;
-	width: 583px;
+	width: 593px;
 	margin: 0 auto;
 	text-align: center;
 	color: var(--wedding-ink);
@@ -488,16 +494,18 @@
 
 .slide-details__img--table {
 	left: 0;
-	top: 226px;
+	top: 240px;
 	width: 497px;
 	height: 737px;
+	z-index: 2;
 }
 
 .slide-details__img--icecream {
 	left: 511px;
-	top: 198px;
+	top: 230px;
 	width: 514px;
 	height: 725px;
+	z-index: 3;
 }
 
 .slide-details__img--14 {
@@ -519,6 +527,7 @@
 	top: 707px;
 	width: 559px;
 	height: 609px;
+	z-index: 2;
 }
 
 .slide-details__img--16 {
@@ -554,13 +563,14 @@
 	top: 1048px;
 	width: 554px;
 	height: 720px;
+	z-index: 2;
 }
 
 /* —— Slide 6: Dress code —— */
 .slide-dresscode {
 	position: absolute;
 	left: 0;
-	top: 4193px;
+	top: 4729px;
 	width: 100%;
 	padding: 0 10px;
 }
@@ -650,10 +660,10 @@
 }
 
 .slide-dresscode__body {
-	margin: 57px 0 0;
+	margin: 20px 0 0;
 	font-family: var(--font-script);
 	font-size: 50px;
-	line-height: 1.5;
+	line-height: 1.2;
 }
 
 .slide-dresscode__colors-col {
@@ -692,13 +702,12 @@
 .slide-schedule-header {
 	position: absolute;
 	left: 0;
-	top: 5258px;
+	top: 5794px;
 	width: 100%;
 	height: 117px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
 }
 
 .slide-schedule-header__bg {
@@ -718,18 +727,23 @@
 	position: relative;
 	z-index: 2;
 	margin: 0;
-	font-family: var(--font-serif);
-	font-size: 50px;
+	font-family: var(--font-script);
+	font-size: 55px;
+	font-weight: 400;
 	color: var(--wedding-ink-accent);
 	white-space: nowrap;
 	line-height: 1;
+}
+
+.slide-schedule-header__cap {
+	font-size: 90px;
 }
 
 /* Бумага под блоком «Свадебное расписание» (Figma 1188:8) */
 .slide-schedule-paper {
 	position: absolute;
 	left: 0;
-	top: 5375px;
+	top: 5911px;
 	width: 100%;
 	height: 1366px;
 	z-index: 0;
@@ -749,7 +763,7 @@
 .slide-schedule {
 	position: absolute;
 	left: 0;
-	top: 5375px;
+	top: 5911px;
 	width: 100%;
 	height: 1366px;
 	z-index: 1;
@@ -775,10 +789,10 @@
 
 .slide-schedule__barrel {
 	position: absolute;
-	left: -26px;
-	top: 1040px;
-	width: 317px;
-	height: 335px;
+	left: 0px;
+	top: 1140px;
+	width: 367px;
+	height: 385px;
 }
 
 .slide-schedule__lace-left img,
@@ -830,11 +844,11 @@
 .slide-schedule__banner {
 	position: relative;
 	width: 813px;
-	height: 79px;
+	height: 80px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 14px 180px 16px 99px;
+	padding: 5px 180px 5px 99px;
 }
 
 .slide-schedule__banner img {
@@ -848,13 +862,14 @@
 .slide-schedule__banner-text {
 	position: relative;
 	margin: 0;
-	font-family: var(--font-serif);
-	font-size: 50px;
+	font-family: var(--font-script);
+	font-size: 55px;
+	font-weight: 400;
 	color: var(--wedding-ink-accent);
 }
 
 .slide-schedule__banner-cap {
-	font-size: 69px;
+	font-size: 80px;
 }
 
 .slide-schedule__timeline {
@@ -866,11 +881,13 @@
 	font-family: var(--font-script);
 	display: flex;
 	flex-direction: column;
-	gap: 27px;
+	align-items: start;
+	gap: 2px;
 }
 
 .slide-schedule__timeline li:nth-child(1) {
-	font-size: 40px;
+	font-size: 35px;
+	align-self: center;
 }
 
 .slide-schedule__timeline li:nth-child(2) {
@@ -878,7 +895,7 @@
 }
 
 .slide-schedule__timeline li:nth-child(3) {
-	font-size: 55px;
+	font-size: 60px;
 	line-height: 1.5;
 }
 
@@ -892,11 +909,11 @@
 .slide-schedule__second-banner {
 	position: relative;
 	width: 792px;
-	height: 75px;
+	height: 80px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 19px 166px 21px 183px;
+	padding: 5px 166px 5px 183px;
 }
 
 .slide-schedule__second-banner img {
@@ -910,9 +927,14 @@
 .slide-schedule__second-banner p {
 	position: relative;
 	margin: 0;
-	font-family: var(--font-serif);
-	font-size: 50px;
+	font-family: var(--font-script);
+	font-size: 55px;
+	font-weight: 400;
 	color: var(--wedding-ink-accent);
+}
+
+.slide-schedule__second-cap {
+	font-size: 90px;
 }
 
 .slide-schedule__second-text {
@@ -920,7 +942,7 @@
 	width: 601px;
 	font-family: var(--font-script);
 	font-size: 35px;
-	line-height: normal;
+	line-height: 1.5;
 	text-align: center;
 	color: var(--wedding-ink-accent);
 }
@@ -929,7 +951,7 @@
 .slide-footer {
 	position: absolute;
 	left: 0;
-	top: 6941px;
+	top: 7536px;
 	width: 100%;
 	height: 1300px;
 	display: flex;
@@ -941,16 +963,17 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 354px;
-	height: 100%;
+	width: 50%;
+	height: 600px;
+	object-fit: fill;
 }
 
 .slide-footer__lace-right {
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 354px;
-	height: 100%;
+	width: 50%;
+	height: 600px;
 	transform: scaleX(-1);
 }
 
@@ -1020,13 +1043,12 @@
 }
 
 .rsvp-form__title {
-	margin: 80px 0 0;
+	margin: 80px 0 50px;
 	font-family: var(--font-script);
-	font-size: 60px;
+	font-size: 70px;
 	line-height: 1.2;
-	font-weight: 800;
 	color: var(--wedding-ink-accent);
-	background: #e0d6ccbb;
+	/* background: #e0d6cc51; */
 	padding: 10px;
 	border-radius: 16px;
 }
@@ -1122,11 +1144,11 @@
 	background: transparent;
 }
 
-.rsvp-form__checkbox:hover input ~ .rsvp-form__checkmark {
+.rsvp-form__checkbox:hover input~.rsvp-form__checkmark {
 	border-color: var(--wedding-ink);
 }
 
-.rsvp-form__checkbox input:checked ~ .rsvp-form__checkmark {
+.rsvp-form__checkbox input:checked~.rsvp-form__checkmark {
 	background: var(--wedding-ink-accent);
 	border-color: var(--wedding-ink-accent);
 }
@@ -1142,7 +1164,7 @@
 	margin-top: -4px;
 }
 
-.rsvp-form__checkbox input:checked ~ .rsvp-form__checkmark::after {
+.rsvp-form__checkbox input:checked~.rsvp-form__checkmark::after {
 	display: block;
 }
 

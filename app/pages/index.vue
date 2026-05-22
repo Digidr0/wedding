@@ -22,20 +22,14 @@
 							The wedding of<br />
 							Alexander &amp;Milaslava
 						</h1>
-				<div class="slide-hero__letter" aria-hidden="true">
-					<span class="slide-hero__letter-text font-script">Приглашение</span>
-					<video
-						id="hero-video"
-						muted
-						playsinline
-						preload="metadata"
-						aria-hidden="true"
-					></video>
-				</div>
-			</section>
+						<div class="slide-hero__letter" aria-hidden="true">
+							<span class="slide-hero__letter-text font-script">Приглашение</span>
+							<video id="hero-video" muted playsinline preload="metadata" aria-hidden="true"></video>
+						</div>
+					</section>
 
-			<!-- Slide 2: Invitation -->
-			<section class="slide-invite slide-animate" aria-label="Приглашение">
+					<!-- Slide 2: Invitation -->
+					<section class="slide-invite slide-animate" aria-label="Приглашение">
 						<div class="slide-invite__lace" aria-hidden="true">
 							<img src="/figma/lace-vertical.png" alt="" />
 						</div>
@@ -107,12 +101,9 @@
 							<div class="slide-address__building">
 								<img src="/figma/image-10.png" alt="Загородный клуб Hunterburg" />
 							</div>
-							<a
-								class="btn-wedding slide-address__map-btn"
+							<a class="btn-wedding slide-address__map-btn"
 								href="https://2gis.ru/search/47.8431907%2040.2893761/firm/70000001100675258/40.288954%2C47.84301?m=40.289116%2C47.843086%2F19.99"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
+								target="_blank" rel="noopener noreferrer">
 								Открыть карту
 							</a>
 						</div>
@@ -160,7 +151,8 @@
 						</div>
 
 						<div class="slide-details__title-wrap">
-							<h2 id="details-title" class="slide-details__title font-serif" data-split="chars">Детали</h2>
+							<h2 id="details-title" class="slide-details__title font-serif" data-split="chars">Детали
+							</h2>
 							<p class="slide-details__desc font-script">
 								Наша свадьба будет<br />
 								проходить в испанском стиле<br />
@@ -220,14 +212,11 @@
 					<!-- Schedule header -->
 					<section class="slide-schedule-header slide-animate" aria-label="Свадебное расписание">
 						<div class="slide-schedule-header__bg" aria-hidden="true">
-							<img
-								src="/figma/Sheludle-title-bg.png"
-								alt=""
-								width="1025"
-								height="117"
-							/>
+							<img src="/figma/Sheludle-title-bg.png" alt="" width="1025" height="117" />
 						</div>
-						<h2 class="slide-schedule-header__title font-serif">Свадебное расписание</h2>
+						<h2 class="slide-schedule-header__title font-script">
+							<span class="slide-schedule-header__cap">С</span>вадебное расписание
+						</h2>
 					</section>
 
 					<!-- Schedule -->
@@ -244,34 +233,38 @@
 
 						<div class="slide-schedule__content">
 							<div class="slide-schedule__vikup">
-								<h3 class="slide-schedule__vikup-title font-script">Выкуп</h3>
+								<p class="slide-schedule__vikup-title font-script">Выкуп</p>
 								<p class="slide-schedule__vikup-text font-script">
 									12:30 Выкуп в доме Невесты<br />
-									Будем рады видеть вас на выкупе,но также вы можете присоединиться к нам уже в загородном клубе
+									Будем рады видеть вас на выкупе,но также вы можете присоединиться к нам уже в
+									загородном клубе
 								</p>
 							</div>
 
 							<div class="slide-schedule__hunterburg">
 								<div class="slide-schedule__banner">
 									<img src="/figma/schedule-hunterburg-bg.png" alt="" />
-									<p class="slide-schedule__banner-text font-serif">
+									<p class="slide-schedule__banner-text font-script">
 										<span class="slide-schedule__banner-cap">H</span>unterburg
 									</p>
 								</div>
 								<ul class="slide-schedule__timeline font-script">
-									<li>15:30 Сбор гостей</li>
-									<li>16:30 Торжественная церемония</li>
-									<li>18:00 Банкет</li>
+									<li class="slide-schedule__timeline-item-small">15:30 Сбор гостей</li>
+									<li class="slide-schedule__timeline-item-medium">16:30 Торжественная церемония</li>
+									<li class="slide-schedule__timeline-item-big">18:00 Банкет</li>
 								</ul>
 							</div>
 
 							<div class="slide-schedule__second-day">
 								<div class="slide-schedule__second-banner">
 									<img src="/figma/schedule-second-day-bg.png" alt="" />
-									<p class="font-serif">Второй день</p>
+									<p class="font-script">
+										<span class="slide-schedule__second-cap">В</span>торой день
+									</p>
 								</div>
 								<p class="slide-schedule__second-text font-script">
-									На территории клуба есть уютные домики для гостей, в которых вы сможете переночевать и присоединиться к нам на второй день свадьбы.<br />
+									На территории клуба есть уютные домики для гостей, в которых вы сможете переночевать
+									и присоединиться к нам на второй <br />день свадьбы.<br />
 									Домики оборудованы всем необходимым (полотенца, тапочки, халаты).<br />
 									Формат: отдых на улице, баня.<br />
 									Поэтому не забудьте:<br />
@@ -293,58 +286,32 @@
 						</div>
 
 						<div class="slide-footer__content">
-							<form id="rsvp-form" class="rsvp-form" action="https://formspree.io/f/xeedaeld" method="POST">
-								<p class="rsvp-form__title font-script">Подтвердите присутствие</p>
+							<form id="rsvp-form" class="rsvp-form" action="https://formspree.io/f/xeedaeld"
+								method="POST">
+								<p class="rsvp-form__title font-script">Пожалуйста подтвердите свое
+									присутствие</p>
 
 								<div class="rsvp-form__field">
 									<label class="rsvp-form__label font-serif" for="first-name">Имя</label>
-									<input
-										id="first-name"
-										class="rsvp-form__input"
-										type="text"
-										name="Имя"
-										required
-										autocomplete="given-name"
-									/>
+									<input id="first-name" class="rsvp-form__input" type="text" name="Имя" required
+										autocomplete="given-name" />
 									<span data-fs-error="first-name"></span>
 								</div>
 								<div class="rsvp-form__field">
 									<label class="rsvp-form__label font-serif" for="last-name">Фамилия</label>
-									<input
-										id="last-name"
-										class="rsvp-form__input"
-										type="text"
-										name="Фамилия"
-										required
-										autocomplete="family-name"
-									/>
+									<input id="last-name" class="rsvp-form__input" type="text" name="Фамилия" required
+										autocomplete="family-name" />
 									<span data-fs-error="last-name"></span>
 								</div>
 								<div class="rsvp-form__field">
 									<label class="rsvp-form__label font-serif" for="adults">Взрослых</label>
-									<input
-										id="adults"
-										class="rsvp-form__input"
-										type="number"
-										name="Взрослых"
-										min="1"
-										max="20"
-										value="1"
-										required
-									/>
+									<input id="adults" class="rsvp-form__input" type="number" name="Взрослых" min="1"
+										max="20" value="1" required />
 								</div>
 								<div class="rsvp-form__field">
 									<label class="rsvp-form__label font-serif" for="children">Детей</label>
-									<input
-										id="children"
-										class="rsvp-form__input"
-										type="number"
-										name="Детей"
-										min="0"
-										max="20"
-										value="0"
-										required
-									/>
+									<input id="children" class="rsvp-form__input" type="number" name="Детей" min="0"
+										max="20" value="0" required />
 								</div>
 
 								<label class="rsvp-form__checkbox">
