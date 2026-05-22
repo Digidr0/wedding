@@ -475,6 +475,11 @@ onMounted(async () => {
 				videoEnded.value = true
 				heroVideo.style.display = 'none'
 				initScrollObserver()
+				// scroll so slide-invite starts at top of viewport
+				const inviteSection = pageRoot.value?.querySelector('.slide-invite')
+				if (inviteSection) {
+					inviteSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+				}
 			},
 			{ once: true }
 		)
@@ -491,6 +496,10 @@ onMounted(async () => {
 				videoEnded.value = true
 				if (heroVideo) heroVideo.style.display = 'none'
 				initScrollObserver()
+				const inviteSection = pageRoot.value?.querySelector('.slide-invite')
+				if (inviteSection) {
+					inviteSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+				}
 			}
 		}, 10000)
 	} else {
