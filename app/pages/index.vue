@@ -447,8 +447,8 @@ onMounted(async () => {
 											if (chars.length) {
 												tl.fromTo(
 													chars,
-													{ y: 12, opacity: 0, rotationX: -6 },
-													{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
+													{ y: 12, opacity: 0 },
+													{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
 													'>-=0.15'
 												)
 											}
@@ -470,8 +470,8 @@ onMounted(async () => {
 										if (itemsChars?.length) {
 											tl.fromTo(
 												itemsChars,
-												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
+												{ y: 12, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
 												0
 											)
 										}
@@ -489,8 +489,8 @@ onMounted(async () => {
 										if (headingChars.length) {
 											tl.fromTo(
 												headingChars,
-												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
+												{ y: 12, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
 												'>-=0.15'
 											)
 										}
@@ -499,8 +499,8 @@ onMounted(async () => {
 										if (bodyChars.length) {
 											tl.fromTo(
 												bodyChars,
-												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
+												{ y: 12, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
 												'>-=0.15'
 											)
 										}
@@ -528,8 +528,8 @@ onMounted(async () => {
 										if (titleChars.length) {
 											tl.fromTo(
 												titleChars,
-												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
+												{ y: 12, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
 												'<'
 											)
 										}
@@ -550,8 +550,8 @@ onMounted(async () => {
 										if (vikupTitleChars.length) {
 											tl.fromTo(
 												vikupTitleChars,
-												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
+												{ y: 12, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
 												'>-=0.15'
 											)
 										}
@@ -579,8 +579,8 @@ onMounted(async () => {
 										if (bannerChars.length) {
 											tl.fromTo(
 												bannerChars,
-												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
+												{ y: 12, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
 												'<'
 											)
 										}
@@ -623,8 +623,8 @@ onMounted(async () => {
 										if (secondChars.length) {
 											tl.fromTo(
 												secondChars,
-												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
+												{ y: 12, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
 												'<'
 											)
 										}
@@ -655,8 +655,8 @@ onMounted(async () => {
 											if (chars.length) {
 												tl.fromTo(
 													chars,
-													{ y: 12, opacity: 0, rotationX: -6 },
-													{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
+													{ y: 12, opacity: 0 },
+													{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
 													'>-=0.15'
 												)
 											}
