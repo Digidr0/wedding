@@ -44,6 +44,8 @@ img {
 	display: inline-block;
 	line-height: 1em;
 	transform-origin: 50% 50%;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 }
 
 .word {
