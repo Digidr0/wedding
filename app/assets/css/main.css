@@ -46,6 +46,10 @@ img {
 	transform-origin: 50% 50%;
 }
 
+.word {
+	display: inline-block;
+}
+
 .slide-animate {
 	opacity: 0;
 	transform: translateY(20px);

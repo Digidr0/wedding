@@ -233,7 +233,7 @@
 						<div class="slide-schedule__content">
 							<div class="slide-schedule__vikup">
 								<p class="slide-schedule__vikup-title font-script" data-split="chars">Выкуп</p>
-								<p class="slide-schedule__vikup-text font-script" data-split="chars">
+								<p class="slide-schedule__vikup-text font-script" data-split="words">
 									12:30 Выкуп в доме Невесты<br />
 									Будем рады видеть вас на выкупе,но также вы можете присоединиться к нам уже в
 									загородном клубе
@@ -248,9 +248,9 @@
 									</p>
 								</div>
 								<ul class="slide-schedule__timeline font-script">
-									<li class="slide-schedule__timeline-item-small" data-split="chars">15:30 Сбор гостей</li>
-									<li class="slide-schedule__timeline-item-medium" data-split="chars">16:30 Торжественная церемония</li>
-									<li class="slide-schedule__timeline-item-big" data-split="chars">18:00 Банкет</li>
+									<li class="slide-schedule__timeline-item-small" data-split="words">15:30 Сбор гостей</li>
+									<li class="slide-schedule__timeline-item-medium" data-split="words">16:30 Торжественная церемония</li>
+									<li class="slide-schedule__timeline-item-big" data-split="words">18:00 Банкет</li>
 								</ul>
 							</div>
 
@@ -261,7 +261,7 @@
 										<span class="slide-schedule__second-cap">В</span>торой день
 									</p>
 								</div>
-								<p class="slide-schedule__second-text font-script" data-split="chars">
+								<p class="slide-schedule__second-text font-script" data-split="words">
 									На территории клуба есть уютные домики для гостей, в которых вы сможете переночевать
 									и присоединиться к нам на второй <br />день свадьбы.<br />
 									Домики оборудованы всем необходимым (полотенца, тапочки, халаты).<br />
@@ -383,7 +383,7 @@ onMounted(async () => {
 	try {
 		const splitMod = await import('splitting')
 		const Splitting = splitMod.default || splitMod
-		Splitting({ target: pageRoot.value.querySelectorAll('[data-split="chars"]') })
+		Splitting({ target: pageRoot.value.querySelectorAll('[data-split="chars"], [data-split="words"]') })
 	} catch (e) {
 		// ignore if splitting fails in this environment
 	}
@@ -534,7 +534,7 @@ onMounted(async () => {
 											)
 										}
 									} else if (el.classList.contains('slide-schedule')) {
-										// Schedule: lace → banner + strip → second-banner + barrel → vikup → timeline → second-text
+										// Schedule: lace → vikup → banner + strip → timeline → second-banner + barrel → second-text
 										const laceLeft = el.querySelector('.slide-schedule__lace-left img')
 										if (laceLeft) {
 											tl.fromTo(
@@ -545,6 +545,27 @@ onMounted(async () => {
 											)
 										}
 
+										// Vikup block: title chars → text words
+										const vikupTitleChars = el.querySelectorAll('.slide-schedule__vikup-title .char')
+										if (vikupTitleChars.length) {
+											tl.fromTo(
+												vikupTitleChars,
+												{ y: 12, opacity: 0, rotationX: -6 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												'>-=0.15'
+											)
+										}
+										const vikupTextWords = el.querySelectorAll('.slide-schedule__vikup-text .word')
+										if (vikupTextWords.length) {
+											tl.fromTo(
+												vikupTextWords,
+												{ y: 10, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.35, stagger: 0.05, ease: 'power2.out' },
+												'>-=0.15'
+											)
+										}
+
+										// Banner block: bg + text chars together
 										const bannerImg = el.querySelector('.slide-schedule__banner img')
 										if (bannerImg) {
 											tl.fromTo(
@@ -564,6 +585,7 @@ onMounted(async () => {
 											)
 										}
 
+										// Strip after banner
 										const stripImg = el.querySelector('.slide-schedule__strip img')
 										if (stripImg) {
 											tl.fromTo(
@@ -573,6 +595,21 @@ onMounted(async () => {
 											)
 										}
 
+										// Timeline items (word-split) — each li separately
+										const timelineItems = el.querySelectorAll('.slide-schedule__timeline li')
+										timelineItems.forEach((item) => {
+											const words = item.querySelectorAll('.word')
+											if (words.length) {
+												tl.fromTo(
+													words,
+													{ y: 10, opacity: 0 },
+													{ y: 0, opacity: 1, duration: 0.35, stagger: 0.05, ease: 'power2.out' },
+													'>-=0.15'
+												)
+											}
+										})
+
+										// Second-banner block: bg + text chars together
 										const secondBannerImg = el.querySelector('.slide-schedule__second-banner img')
 										if (secondBannerImg) {
 											tl.fromTo(
@@ -592,6 +629,7 @@ onMounted(async () => {
 											)
 										}
 
+										// Barrel after second-banner
 										const barrelImg = el.querySelector('.slide-schedule__barrel img')
 										if (barrelImg) {
 											tl.fromTo(
@@ -601,20 +639,15 @@ onMounted(async () => {
 											)
 										}
 
-										// Remaining text groups: vikup → timeline → second-day text
-										const remainingTexts = Array.from(el.querySelectorAll('[data-split="chars"]'))
-											.filter((g) => !g.closest('.slide-schedule__banner') && !g.closest('.slide-schedule__second-banner'))
-										remainingTexts.forEach((group) => {
-											const chars = group.querySelectorAll('.char')
-											if (chars.length) {
-												tl.fromTo(
-													chars,
-													{ y: 12, opacity: 0, rotationX: -6 },
-													{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
-													'>-=0.15'
-												)
-											}
-										})
+										// Second-day text words after barrel
+										const secondTextWords = el.querySelectorAll('.slide-schedule__second-text .word')
+										if (secondTextWords.length) {
+											tl.fromTo(
+												secondTextWords,
+												{ y: 10, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.35, stagger: 0.05, ease: 'power2.out' }
+											)
+										}
 									} else {
 										// Default: text groups first, then images
 										textGroups.forEach((group) => {
@@ -639,6 +672,19 @@ onMounted(async () => {
 												position
 											)
 										}
+
+										// Animate word-split elements (word-by-word) for default sections
+										const wordTexts = Array.from(el.querySelectorAll('[data-split="words"]'))
+										wordTexts.forEach((group) => {
+											const words = group.querySelectorAll('.word')
+											if (words.length) {
+												tl.fromTo(
+													words,
+													{ y: 10, opacity: 0 },
+													{ y: 0, opacity: 1, duration: 0.35, stagger: 0.05, ease: 'power2.out' }
+												)
+											}
+										})
 									}
 
 									// Resolve queue promise when this section's animation finishes
@@ -658,7 +704,16 @@ onMounted(async () => {
 
 	const heroVideo = document.getElementById('hero-video') as HTMLVideoElement | null
 	if (heroVideo) {
-		heroVideo.src = '/wedding/animated/output.webm'
+		// Video sources: HEVC first (iOS/Safari requires it for alpha), WebM fallback (Chrome/Firefox/Android)
+		const srcMov = document.createElement('source')
+		srcMov.src = '/wedding/animated/output.mov'
+		srcMov.type = 'video/mp4; codecs=hvc1'
+		heroVideo.appendChild(srcMov)
+		const srcWebm = document.createElement('source')
+		srcWebm.src = '/wedding/animated/output.webm'
+		srcWebm.type = 'video/webm'
+		heroVideo.appendChild(srcWebm)
+
 		heroVideo.autoplay = false
 		heroVideo.muted = true
 		heroVideo.preload = 'metadata'
