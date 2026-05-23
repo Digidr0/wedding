@@ -184,8 +184,8 @@
 
 .slide-invite__couple {
 	position: absolute;
-	right: 0;
-	top: 0;
+	right: 80px;
+	top: 20px;
 	width: 327px;
 	height: 472px;
 	z-index: 3;
@@ -202,6 +202,7 @@
 	position: relative;
 	width: 510px;
 	z-index: 2;
+	top: 40px;
 	text-align: center;
 	color: var(--wedding-ink);
 }
@@ -271,7 +272,7 @@
 
 .slide-venue__photos {
 	position: absolute;
-	top: 210px;
+	top: 150px;
 	left: 0;
 	right: 0;
 	height: 650px;
