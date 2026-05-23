@@ -704,51 +704,42 @@ onMounted(async () => {
 
 	const heroVideo = document.getElementById('hero-video') as HTMLVideoElement | null
 	if (heroVideo) {
-		// Video sources: HEVC first (iOS/Safari requires it for alpha), WebM fallback (Chrome/Firefox/Android)
+		// Video sources: HEVC first (Safari/iOS requires it for alpha), WebM fallback (Chrome/Firefox/Android)
 		const srcMov = document.createElement('source')
 		srcMov.src = '/wedding/animated/output.mov'
-		srcMov.type = 'video/mp4; codecs=hvc1'
+		srcMov.type = 'video/quicktime; codecs=hvc1'
 		heroVideo.appendChild(srcMov)
 		const srcWebm = document.createElement('source')
 		srcWebm.src = '/wedding/animated/output.webm'
 		srcWebm.type = 'video/webm'
 		heroVideo.appendChild(srcWebm)
 
-		heroVideo.autoplay = false
 		heroVideo.muted = true
-		heroVideo.preload = 'metadata'
-		heroVideo.pause()
-		heroVideo.currentTime = 0
-		heroVideo.style.opacity = '1'
+		heroVideo.preload = 'auto'
+		heroVideo.style.opacity = '0'
 		heroVideo.style.transition = 'opacity 0.3s ease'
 
+		// Show first frame when loaded, then let autoplay take over
 		const showFirstFrame = () => {
-			heroVideo.currentTime = 0
-			heroVideo.pause()
 			heroVideo.style.opacity = '1'
 		}
-
 		if (heroVideo.readyState >= 1) {
 			showFirstFrame()
 		} else {
 			heroVideo.addEventListener('loadeddata', showFirstFrame, { once: true })
 		}
 
-		heroVideo.addEventListener(
-			'ended',
-			() => {
+		// Start playback — uses autoplay (works on iOS with muted+playsinline)
+		heroVideo.autoplay = true
+		heroVideo.load()
+
+		heroVideo.addEventListener('ended', () => {
 				videoEnded.value = true
 				heroVideo.style.display = 'none'
 				initScrollObserver()
 			},
 			{ once: true }
 		)
-
-		setTimeout(() => {
-			heroVideo.play().catch(() => {
-				// ignore autoplay block or playback failure
-			})
-		}, 1000)
 
 		// Fallback: auto-skip hero after 10s if video never ended (e.g. blocked / error)
 		setTimeout(() => {
