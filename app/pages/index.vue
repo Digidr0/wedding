@@ -18,7 +18,7 @@
 							<img src="/figma/hero-flower-right.png" alt="" />
 						</div>
 
-						<h1 id="hero-title" class="slide-hero__title" data-split="chars">
+						<h1 id="hero-title" class="slide-hero__title" data-split="words">
 							The wedding of<br />
 							Alexander &amp;Milaslava
 						</h1>
@@ -37,13 +37,13 @@
 						</div>
 
 						<div class="slide-invite__text">
-							<p class="slide-invite__greeting font-script" data-split="chars">
+							<p class="slide-invite__greeting font-script" data-split="words">
 								Дорогие гости!<br />
 								Мы приглашаем вас<br />
 								на нашу Свадьбу!
 							</p>
-							<p class="slide-invite__date font-script" data-split="chars">29.08.2026</p>
-							<p class="slide-invite__venue-label font-serif" data-split="chars">Место проведения:</p>
+							<p class="slide-invite__date font-script" data-split="words">29.08.2026</p>
+							<p class="slide-invite__venue-label font-serif" data-split="words">Место проведения:</p>
 						</div>
 					</section>
 
@@ -61,8 +61,8 @@
 							</div>
 						</div>
 						<header class="slide-venue__title">
-							<p class="slide-venue__subtitle font-script" data-split="chars">Загородный клуб</p>
-							<p class="slide-venue__name font-script" data-split="chars">
+							<p class="slide-venue__subtitle font-script" data-split="words">Загородный клуб</p>
+							<p class="slide-venue__name font-script" data-split="words">
 								<span class="slide-venue__name-first">H</span>unterburg
 							</p>
 						</header>
@@ -75,23 +75,23 @@
 						</div>
 
 						<div class="slide-address__content">
-							<p class="slide-address__heading font-serif" data-split="chars">
+							<p class="slide-address__heading font-serif" data-split="words">
 								<span class="slide-address__heading-cap">А</span>дрес
 							</p>
-							<p class="slide-address__text font-script" data-split="chars">
+							<p class="slide-address__text font-script" data-split="words">
 								Ростовская область,<br />
 								Красносулинский<br />
 								район<br />
 								с.Табунщиково
 							</p>
 							<div class="slide-address__coords-block">
-								<p class="slide-address__coords-label font-script" data-split="chars">
+								<p class="slide-address__coords-label font-script" data-split="words">
 									Координаты для<br />
 									навигатора:
 								</p>
 								<div class="slide-address__coords-values font-script">
-									<p data-split="chars">Широта: 47.8431907</p>
-									<p data-split="chars">Долгота: 40.2893761</p>
+									<p data-split="words">Широта: 47.8431907</p>
+									<p data-split="words">Долгота: 40.2893761</p>
 								</div>
 							</div>
 						</div>
@@ -150,9 +150,9 @@
 						</div>
 
 						<div class="slide-details__title-wrap">
-							<h2 id="details-title" class="slide-details__title font-serif" data-split="chars">Детали
+							<h2 id="details-title" class="slide-details__title font-serif" data-split="words">Детали
 							</h2>
-							<p class="slide-details__desc font-script" data-split="chars">
+							<p class="slide-details__desc font-script" data-split="words">
 								Наша свадьба будет<br />
 								проходить в испанском стиле<br />
 								Основные элементы - кружево и<br />
@@ -164,7 +164,7 @@
 					<!-- Slide 6: Dress code -->
 					<section class="slide-dresscode slide-animate" aria-labelledby="dresscode-title">
 						<div>
-							<p class="slide-dresscode__items-text font-script" data-split="chars">
+							<p class="slide-dresscode__items-text font-script" data-split="words">
 								Для поддерживания стилистики гостям будут<br />
 								вручены зонтики и вееры
 							</p>
@@ -186,8 +186,8 @@
 
 						<div class="slide-dresscode__row">
 							<div class="slide-dresscode__text-col">
-								<h2 id="dresscode-title" class="slide-dresscode__heading font-serif" data-split="chars">Дресс-код:</h2>
-								<p class="slide-dresscode__body font-script" data-split="chars">
+								<h2 id="dresscode-title" class="slide-dresscode__heading font-serif" data-split="words">Дресс-код:</h2>
+								<p class="slide-dresscode__body font-script" data-split="words">
 									мы будем очень<br />
 									благодарны<br />
 									вам,если у вас<br />
@@ -213,7 +213,7 @@
 						<div class="slide-schedule-header__bg" aria-hidden="true">
 							<img src="/figma/Sheludle-title-bg.png" alt="" width="1025" height="117" />
 						</div>
-						<h2 class="slide-schedule-header__title font-script" data-split="chars">
+						<h2 class="slide-schedule-header__title font-script" data-split="words">
 							<span class="slide-schedule-header__cap">С</span>вадебное расписание
 						</h2>
 					</section>
@@ -232,7 +232,7 @@
 
 						<div class="slide-schedule__content">
 							<div class="slide-schedule__vikup">
-								<p class="slide-schedule__vikup-title font-script" data-split="chars">Выкуп</p>
+								<p class="slide-schedule__vikup-title font-script" data-split="words">Выкуп</p>
 								<p class="slide-schedule__vikup-text font-script" data-split="words">
 									12:30 Выкуп в доме Невесты<br />
 									Будем рады видеть вас на выкупе,но также вы можете присоединиться к нам уже в
@@ -243,7 +243,7 @@
 							<div class="slide-schedule__hunterburg">
 								<div class="slide-schedule__banner">
 									<img src="/figma/schedule-hunterburg-bg.png" alt="" />
-									<p class="slide-schedule__banner-text font-script" data-split="chars">
+									<p class="slide-schedule__banner-text font-script" data-split="words">
 										<span class="slide-schedule__banner-cap">H</span>unterburg
 									</p>
 								</div>
@@ -257,7 +257,7 @@
 							<div class="slide-schedule__second-day">
 								<div class="slide-schedule__second-banner">
 									<img src="/figma/schedule-second-day-bg.png" alt="" />
-									<p class="font-script" data-split="chars">
+									<p class="font-script" data-split="words">
 										<span class="slide-schedule__second-cap">В</span>торой день
 									</p>
 								</div>
@@ -287,7 +287,7 @@
 						<div class="slide-footer__content">
 							<form id="rsvp-form" class="rsvp-form" action="https://formspree.io/f/xeedaeld"
 								method="POST">
-								<p class="rsvp-form__title font-script" data-split="chars">Пожалуйста подтвердите свое
+								<p class="rsvp-form__title font-script" data-split="words">Пожалуйста подтвердите свое
 									присутствие</p>
 
 								<div class="rsvp-form__field">
@@ -316,18 +316,18 @@
 								<label class="rsvp-form__checkbox">
 									<input type="checkbox" name="Соблюдение дресс-кода" required />
 									<span class="rsvp-form__checkmark"></span>
-									<span class="rsvp-form__checkbox-label font-serif" data-split="chars">
+									<span class="rsvp-form__checkbox-label font-serif" data-split="words">
 										Я буду соблюдать дресс-код мероприятия
 									</span>
 								</label>
 
 								<div data-fs-error></div>
 
-								<button type="submit" class="btn-wedding rsvp-form__btn font-serif" data-split="chars" data-fs-submit-btn>
+								<button type="submit" class="btn-wedding rsvp-form__btn font-serif" data-split="words" data-fs-submit-btn>
 									Отправить
 								</button>
 
-								<div data-fs-success class="rsvp-form__success font-script" data-split="chars">
+								<div data-fs-success class="rsvp-form__success font-script" data-split="words">
 									Спасибо! Ждём вас!
 								</div>
 							</form>
@@ -383,7 +383,7 @@ onMounted(async () => {
 	try {
 		const splitMod = await import('splitting')
 		const Splitting = splitMod.default || splitMod
-		Splitting({ target: pageRoot.value.querySelectorAll('[data-split="chars"], [data-split="words"]') })
+		Splitting({ target: pageRoot.value.querySelectorAll('[data-split="words"]') })
 	} catch (e) {
 		// ignore if splitting fails in this environment
 	}
@@ -429,7 +429,7 @@ onMounted(async () => {
 									// Make section visible immediately (CSS transition handles fade)
 									tl.call(() => el.classList.add('is-visible'), [], 0)
 
-									const textGroups = Array.from(el.querySelectorAll('[data-split="chars"]'))
+									const textGroups = Array.from(el.querySelectorAll('[data-split="words"]'))
 									const imgs = Array.from(el.querySelectorAll('img'))
 
 									if (el.classList.contains('slide-address')) {
@@ -443,12 +443,12 @@ onMounted(async () => {
 											)
 										}
 										textGroups.forEach((group) => {
-											const chars = group.querySelectorAll('.char')
+											const chars = group.querySelectorAll('.word')
 											if (chars.length) {
 												tl.fromTo(
 													chars,
-													{ y: 12, opacity: 0 },
-													{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
+													{ y: 10, opacity: 0 },
+													{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' },
 													'>-=0.15'
 												)
 											}
@@ -466,12 +466,12 @@ onMounted(async () => {
 									} else if (el.classList.contains('slide-dresscode')) {
 										// Dresscode: items-text → icons (stagger) → heading/body → palette/peoples
 										const itemsText = el.querySelector('.slide-dresscode__items-text')
-										const itemsChars = itemsText?.querySelectorAll('.char')
+										const itemsChars = itemsText?.querySelectorAll('.word')
 										if (itemsChars?.length) {
 											tl.fromTo(
 												itemsChars,
-												{ y: 12, opacity: 0 },
-												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
+												{ y: 10, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' },
 												0
 											)
 										}
@@ -485,22 +485,22 @@ onMounted(async () => {
 											)
 										}
 
-										const headingChars = el.querySelectorAll('.slide-dresscode__heading .char')
+										const headingChars = el.querySelectorAll('.slide-dresscode__heading .word')
 										if (headingChars.length) {
 											tl.fromTo(
 												headingChars,
-												{ y: 12, opacity: 0 },
-												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
+												{ y: 10, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' },
 												'>-=0.15'
 											)
 										}
 
-										const bodyChars = el.querySelectorAll('.slide-dresscode__body .char')
+										const bodyChars = el.querySelectorAll('.slide-dresscode__body .word')
 										if (bodyChars.length) {
 											tl.fromTo(
 												bodyChars,
-												{ y: 12, opacity: 0 },
-												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
+												{ y: 10, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' },
 												'>-=0.15'
 											)
 										}
@@ -524,12 +524,12 @@ onMounted(async () => {
 												0
 											)
 										}
-										const titleChars = el.querySelectorAll('.slide-schedule-header__title .char')
+										const titleChars = el.querySelectorAll('.slide-schedule-header__title .word')
 										if (titleChars.length) {
 											tl.fromTo(
 												titleChars,
-												{ y: 12, opacity: 0 },
-												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
+												{ y: 10, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' },
 												'<'
 											)
 										}
@@ -546,12 +546,12 @@ onMounted(async () => {
 										}
 
 										// Vikup block: title chars → text words
-										const vikupTitleChars = el.querySelectorAll('.slide-schedule__vikup-title .char')
+										const vikupTitleChars = el.querySelectorAll('.slide-schedule__vikup-title .word')
 										if (vikupTitleChars.length) {
 											tl.fromTo(
 												vikupTitleChars,
-												{ y: 12, opacity: 0 },
-												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
+												{ y: 10, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' },
 												'>-=0.15'
 											)
 										}
@@ -575,12 +575,12 @@ onMounted(async () => {
 												'>-=0.15'
 											)
 										}
-										const bannerChars = el.querySelectorAll('.slide-schedule__banner-text .char')
+										const bannerChars = el.querySelectorAll('.slide-schedule__banner-text .word')
 										if (bannerChars.length) {
 											tl.fromTo(
 												bannerChars,
-												{ y: 12, opacity: 0 },
-												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
+												{ y: 10, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' },
 												'<'
 											)
 										}
@@ -619,12 +619,12 @@ onMounted(async () => {
 												'>-=0.15'
 											)
 										}
-										const secondChars = el.querySelectorAll('.slide-schedule__second-banner .font-script .char')
+										const secondChars = el.querySelectorAll('.slide-schedule__second-banner .font-script .word')
 										if (secondChars.length) {
 											tl.fromTo(
 												secondChars,
-												{ y: 12, opacity: 0 },
-												{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
+												{ y: 10, opacity: 0 },
+												{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' },
 												'<'
 											)
 										}
@@ -651,12 +651,12 @@ onMounted(async () => {
 									} else {
 										// Default: text groups first, then images
 										textGroups.forEach((group) => {
-											const chars = group.querySelectorAll('.char')
-											if (chars.length) {
+											const items = group.querySelectorAll('.word')
+											if (items.length) {
 												tl.fromTo(
-													chars,
-													{ y: 12, opacity: 0 },
-													{ y: 0, opacity: 1, duration: 0.25, stagger: 0.02 },
+													items,
+													{ y: 10, opacity: 0 },
+													{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' },
 													'>-=0.15'
 												)
 											}
@@ -673,18 +673,7 @@ onMounted(async () => {
 											)
 										}
 
-										// Animate word-split elements (word-by-word) for default sections
-										const wordTexts = Array.from(el.querySelectorAll('[data-split="words"]'))
-										wordTexts.forEach((group) => {
-											const words = group.querySelectorAll('.word')
-											if (words.length) {
-												tl.fromTo(
-													words,
-													{ y: 10, opacity: 0 },
-													{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' }
-												)
-											}
-										})
+
 									}
 
 									// Resolve queue promise when this section's animation finishes
