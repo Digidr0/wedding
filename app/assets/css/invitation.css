@@ -208,10 +208,10 @@
 }
 
 .slide-invite__greeting {
-	margin: 0;
+	margin: 0 0 0.15em;
 	font-family: var(--font-script);
 	font-size: 70px;
-	line-height: normal;
+	line-height: 1.3;
 }
 
 .slide-invite__date {

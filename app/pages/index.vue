@@ -37,11 +37,9 @@
 						</div>
 
 						<div class="slide-invite__text">
-							<p class="slide-invite__greeting font-script" data-split="words">
-								Дорогие гости!<br />
-								Мы приглашаем вас<br />
-								на нашу Свадьбу!
-							</p>
+							<p class="slide-invite__greeting font-script" data-split="words">Дорогие гости!</p>
+							<p class="slide-invite__greeting font-script" data-split="words">Мы приглашаем вас</p>
+							<p class="slide-invite__greeting font-script" data-split="words">на нашу Свадьбу!</p>
 							<p class="slide-invite__date font-script" data-split="words">29.08.2026</p>
 							<p class="slide-invite__venue-label font-serif" data-split="words">Место проведения:</p>
 						</div>
