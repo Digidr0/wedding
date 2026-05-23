@@ -381,7 +381,7 @@ onMounted(async () => {
 	try {
 		const splitMod = await import('splitting')
 		const Splitting = splitMod.default || splitMod
-		Splitting({ target: pageRoot.value.querySelectorAll('[data-split="words"]') })
+		Splitting({ target: pageRoot.value.querySelectorAll('[data-split="words"]'), by: 'words' })
 	} catch (e) {
 		// ignore if splitting fails in this environment
 	}
