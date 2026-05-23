@@ -448,7 +448,7 @@ onMounted(async () => {
 												tl.fromTo(
 													chars,
 													{ y: 12, opacity: 0, rotationX: -6 },
-													{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+													{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
 													'>-=0.15'
 												)
 											}
@@ -471,7 +471,7 @@ onMounted(async () => {
 											tl.fromTo(
 												itemsChars,
 												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
 												0
 											)
 										}
@@ -490,7 +490,7 @@ onMounted(async () => {
 											tl.fromTo(
 												headingChars,
 												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
 												'>-=0.15'
 											)
 										}
@@ -500,7 +500,7 @@ onMounted(async () => {
 											tl.fromTo(
 												bodyChars,
 												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
 												'>-=0.15'
 											)
 										}
@@ -529,7 +529,7 @@ onMounted(async () => {
 											tl.fromTo(
 												titleChars,
 												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
 												'<'
 											)
 										}
@@ -551,7 +551,7 @@ onMounted(async () => {
 											tl.fromTo(
 												vikupTitleChars,
 												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
 												'>-=0.15'
 											)
 										}
@@ -560,7 +560,7 @@ onMounted(async () => {
 											tl.fromTo(
 												vikupTextWords,
 												{ y: 10, opacity: 0 },
-												{ y: 0, opacity: 1, duration: 0.35, stagger: 0.05, ease: 'power2.out' },
+												{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' },
 												'>-=0.15'
 											)
 										}
@@ -580,7 +580,7 @@ onMounted(async () => {
 											tl.fromTo(
 												bannerChars,
 												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
 												'<'
 											)
 										}
@@ -603,7 +603,7 @@ onMounted(async () => {
 												tl.fromTo(
 													words,
 													{ y: 10, opacity: 0 },
-													{ y: 0, opacity: 1, duration: 0.35, stagger: 0.05, ease: 'power2.out' },
+													{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' },
 													'>-=0.15'
 												)
 											}
@@ -624,7 +624,7 @@ onMounted(async () => {
 											tl.fromTo(
 												secondChars,
 												{ y: 12, opacity: 0, rotationX: -6 },
-												{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+												{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
 												'<'
 											)
 										}
@@ -645,7 +645,7 @@ onMounted(async () => {
 											tl.fromTo(
 												secondTextWords,
 												{ y: 10, opacity: 0 },
-												{ y: 0, opacity: 1, duration: 0.35, stagger: 0.05, ease: 'power2.out' }
+												{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' }
 											)
 										}
 									} else {
@@ -656,7 +656,7 @@ onMounted(async () => {
 												tl.fromTo(
 													chars,
 													{ y: 12, opacity: 0, rotationX: -6 },
-													{ y: 0, opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.04 },
+													{ y: 0, opacity: 1, rotationX: 0, duration: 0.25, stagger: 0.02 },
 													'>-=0.15'
 												)
 											}
@@ -681,7 +681,7 @@ onMounted(async () => {
 												tl.fromTo(
 													words,
 													{ y: 10, opacity: 0 },
-													{ y: 0, opacity: 1, duration: 0.35, stagger: 0.05, ease: 'power2.out' }
+													{ y: 0, opacity: 1, duration: 0.18, stagger: 0.025, ease: 'power2.out' }
 												)
 											}
 										})
